@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <h1>Profile</h1>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">My Profile</a></li>
+                <li><a href="#">Find Connections</a></li>
+            </ul>
+            <button class="btn">Sign Out</button>
+        </div>
+        <div class="mainbody">
+            <div class="left">
+                <div class="usercard">
+                    <div class="userhead">
+                        <img src="images/alayne-s.jpg" id="alayne" alt="Alayne-S">
+                    </div>
+                    <div class="userbody">
+                        <h2>Alayne S</h2>
+                        <div class="location">
+                            <img src="icons-2/map-marker.png" id="marker" alt="Map Marker">
+                            <Label>Portland</Label>
+                        </div>
+                        <div class="information">
+                        <p>Developer | Engineer | Problem Solver</p>
+                        <p>Master of the shadows and the Internet!</p>
+                        </div>
+                        <div class="link">
+                            <img src="icons-2/gear.png" id="gear" alt="Gear">
+                            <a href="#" onclick="changename()">Edit Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="education">
+                    <div class="edheader">
+                        <h3>Education</h3>
+                    </div>
+                    <div class="edbody">
+                        <p class="p-one">Coding Dojo - Full Stack Bootcamp</p>
+                        <p class="p-two">Dec 2019 - March 2020</p>
+                        <p class="p-three">Triple black belt in Python, Mern, and C#</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="conreq">
+                    <div class="conreqheader">
+                        <p class="reqnum">2</p>
+                        <h3 class="cr">Connection Requests</h3>
+                    </div>
+                    <div class="conreqbody">
+                        <div class="profpics">
+                            <img src="images/adrien-s.jpg" class="adrien req1" alt="Adrien" id="pic1">
+                            <img src="images/anne-s.jpg" class="anne req2" alt="Anne" id="pic2">
+                        </div>
+                        <div class="proflabels">
+                            <label id="l1"  class="req1">Adrien S</label>
+                            <label id="l2" class="req2">Anne S</label>
+                        </div>
+                        <div class="accept">
+                            <img src="icons-2/accept-circle.png" class="acp req1" alt="accept circle" onclick="hide()" id="a1">
+                            <img src="icons-2/accept-circle.png" class="acp req2" alt="accept circle" onclick="hide()" id="a2">
+                        </div>
+                        <div class="rej">
+                            <img src="icons-2/close-circle.png" class="x req1" alt="close circle" onclick="hide2()" id="rej1">
+                            <img src="icons-2/close-circle.png" class="x req2" alt="close circle" onclick="hide2()" id="rej2">
+                        </div>
+                    </div>
+                </div>
+                <div class="urcon">
+                    <div class="urconheader">
+                        <p class="reqnum" id="connectnum">500</p>
+                        <h3 class="cr">Your Connections</h3>
+                    </div>
+                    <div class="urconbody">
+                        <div class="profpics">
+                            <img src="images/arry-s.jpg" class="pics" alt="Arry">
+                            <img src="images/jane-m.jpg" class="pics" alt="Jane">
+                            <img src="images/phil-s.jpg" class="pics" alt="Phil">
+                            <img src="images/todd-s.jpg" class="pics" alt="Todd">
+                        </div>
+                        <div class="proflabels2">
+                            <label>Arry S</label>
+                            <label>Jane M</label>
+                            <label>Phil S</label>
+                            <label>Todd S</label>
+                        </div>
+                    </div>
+                    <div class="urconbottom">
+                        <a href="#">View More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

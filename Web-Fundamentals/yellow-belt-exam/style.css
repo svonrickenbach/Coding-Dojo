@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2%;
+}
+
+.header{
+    border-bottom: 3px solid black;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(71, 153, 156);
+    color: white;
+}
+
+.topheader{
+    flex: 1;
+    display: flex;
+}
+
+.title{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    
+}
+
+#titleimg{
+    height: 70px;
+    margin-left: 29%;
+    margin-right: 2.5%;
+}
+
+.nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-right: 210px;
+}
+
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2em;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0 160px;
+}
+
+#donate{
+    font-size: 0.9em;
+    background-color: white;
+    border: 3px solid rgb(140, 26, 245);
+    width: 170%;
+    border-radius: 20px;
+    color: rgb(140, 26, 245);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.bothead{
+    flex: 1;
+    display: flex;
+}
+
+.citysrch{
+    flex: 1;
+    margin-left: -40px;
+}
+
+.dropdwn{
+    flex: 2;
+    margin-left: -20px;
+}
+
+.findur{
+    flex: 2;
+    text-align: center;
+    padding-top: 85px;
+}
+
+#find{
+    border: 2px solid black;
+    width: 600px;
+    height: 35px;
+    font-size: 1.2em;
+    background-color: rgb(140, 26, 245);
+    color: white;
+    box-shadow: 5px 3px 1px black;
+    margin-right: 300px;
+    margin-top: 80px;
+}
+
+.dropdwn{
+    padding-top: 50px;
+    text-align: center;
+}
+
+#drptxt{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.icn{
+    height: 50px;
+    margin-right: 20px;
+}
+
+.icnlist1{
+    display: flex;
+    align-items: center;
+    padding-left: 35%
+}
+
+select{
+    border: 2px solid black
+}
+
+.icnlist2{
+    display: flex;
+    align-items: center;
+    padding-left: 15px
+}
+
+#pet{   
+    font-size: 1em;
+    width: 60%;
+}
+
+.citysrch{
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+#search{
+    width: 50%;
+    height: 25px;
+    border: 2px solid black;
+    font-size: 1em;
+}
+
+#pintxt{
+    font-size: 1.2em;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.list{
+    height: 22%;
+    margin: 0 12.5%;
+    display: flex;
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+}
+
+.pic{
+    flex: 0.8;
+}
+
+.ampic{
+    height:80%;
+    padding: 25px;
+}
+
+.description{
+    flex: 3;
+    padding: 55px;
+}
+
+h2{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.desc{
+    font-size: 1.8em
+}
+
+.petbutton{
+    flex: 2;
+
+}
+
+.pettings1, .pettings2, .pettings3{
+    font-size: 1.8em;
+    margin-left: 270px;
+    margin-top: 65px;
+    margin-bottom: 50px;
+}
+
+.pettingbutton{
+    border: 2px solid black;
+    width: 350px;
+    height: 35px;
+    font-size: 1.2em;
+    background-color: rgb(96, 204, 207);
+    color: white;
+    box-shadow: 5px 3px 1px black;
+    margin-left: 65px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <H1>Dojonary</H1>
+            <input type="search" placeholder="Search" id="search">
+            <button class="login" onclick="logout(this)">Login</button>
+        </div>
+        <div class="mainbody">
+            <div class="left">
+                <div class="definition1">
+                    <div class="def1l">
+                        <h2>ninja</h2>
+                        <h3>noun</h3>
+                        <p>Plural: <em>ninjas</em></p>
+                        <button class="likes" onclick="message()">13 likes</button>
+                    </div>
+                    <div class="def1r">
+                        <p class="def">A practitioner skilled in the</p>
+                        <p class="def"></button><a href="#">Japenese</a> art of <a href="#">ninjustu</a></p>
+                    </div>
+                </div>
+                <div class="definition2">
+                    <div class="def2l">
+                        <h2>ninja</h2>
+                        <h3>noun</h3>
+                        <p>Plural: <em>ninjas</em></p>
+                        <button class="likes" onclick="message()">37 likes</button>
+                    </div>
+                    <div class="def2r">
+                        <p class="def">A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="adddef">
+                    <p class="addp">Dojonary is <br> defined by <span class="bold">YOU</span></p>
+                    <button class="add" onclick="hide(this)">Add Definition</button>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script src="script.js"></script>   
+</body>
+</html>

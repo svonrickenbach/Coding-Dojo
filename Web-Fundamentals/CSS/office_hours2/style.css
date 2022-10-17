@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+/* Main Page Styles */
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    border: solid 1px black;
+    background-color: green;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.navbar {
+    border: solid 1px black;
+    background-color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.main-content{
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.column {
+    border: solid 1px black;
+    background-color: blue;
+    width: 450px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+a.content-links{
+    color: black;
+    text-decoration: none;
+    margin-top: 4rem;
+    color: red;
+    padding-bottom: 50px;
+}
+
+/* BONUS PART */
+
+/* .box{
+    color: aliceblue;
+    background-color:rebeccapurple;
+    width: 125px;
+    height: 125px;
+} */

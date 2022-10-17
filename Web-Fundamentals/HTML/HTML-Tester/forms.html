@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>First Name</p>
+        <input type="text" name="first_name" id="first_name">
+    <p>Age</p>
+        <input type="number" name="age">
+    <p>Passwords</p>
+        <input type="password" name="password">
+    <p>Date</p>
+        <input type="date" name="dob">
+    <p>color</p>
+        <input type="color" name="text_color">
+    <p>radio</p>
+        <input type="radio" name="font" value="bold">
+        <label for="bold"><strong>Bold</strong></label>
+        <input type="radio" name="font" value="normal">
+        <label for="normal"><normal>Normal</normal></label>
+    <p>checkbox</p>
+        <input type="checkbox" name="accept" id="accept">
+        <label for="accept">I agree</label> 
+    <p>textarea</p>
+        <textarea name="comment" cols="20" rows="1"></textarea>
+    <p>Select</p>
+        <select name="snack">
+            <option>Almonds</option>
+            <option>Cheese and Crackers</option>
+            <option>Pita and Hummus</option>
+            <option>Pears</option>
+        </select>
+    <p>form<p>
+        <form action="/process" method="post">
+            <div>
+                <label>Name: </label>
+                <input type="text" name="name" 
+                placeholder="Your name..." >
+            </div>
+            <div>
+                <label>Email: </label>
+                <input type="text" name="email" 
+                placeholder="Your email..." >
+            </div>
+            <div>
+                <input type="checkbox" name="offers" 
+                id="offers" checked >
+                <label for="offers">I would like 
+                to receive email offers!</label>
+            </div>
+            <input type="submit" value="Sign Up!" >
+        </form>
+</body>
+</html>
+
+<label>Name: * </label>
+<input type="text" name="name" 
+placeholder="Your name..." required>
+

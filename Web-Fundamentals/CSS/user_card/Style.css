@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    width: 70%;
+    height: 700px;
+    margin: 0 auto;
+    border: 4px solid  rgb(204, 204, 204);
+}
+
+.bluebox{
+    height: 30%;
+    background-color: rgb(76, 159, 181);
+}
+
+#pic{
+    height: 13em;
+    position: fixed;
+    top: 9%;
+    margin-left: 3%;  
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    padding: 3px;
+}
+
+.contentbox{
+    margin-top: 120px;
+    margin-left: 4%;
+}
+
+
+h2{
+    font-size: 70px;
+    margin-bottom: 0.2em;
+}
+
+#marker{
+    height: 2em;
+}
+
+.location{
+    width: 20%;
+    margin-bottom: 1em;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+label{
+    position: relative;
+    left: 1em;
+    font-size: 2.5em;
+}
+
+.description{
+    font-size: 2em;
+}
+
+.link{
+    display: flex;
+    margin-top: 3em;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+#gear{
+    height: 2em;
+    margin-right: 2em;
+}
+
+#link{
+    color: rgb(76, 159, 181);
+    font-size: 1.5em;
+}

@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    /* border: 2px solid black; */
+    height: 100vh;
+    width: 70vw;
+    margin: 0 auto;
+}
+
+
+.header{
+    width: 100%;
+    height: 9%;
+    background-color: black;
+    padding: 1% 2%;
+    box-sizing: border-box;
+}
+
+h1{
+    font-size: 4em;
+    color: white;
+}
+
+#feed{
+    height: 10.7%;
+    font-size: 3em;
+    text-align: center;
+    padding-top: 2.5%;
+    box-sizing: border-box;
+}
+
+.main{
+    height: 79.5%;
+    display: flex;
+}
+
+.left{
+    flex: 1.2;
+}
+
+.avbox{
+    height: 51%;
+    border: 4px solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+img{
+    height: 35%;
+
+}
+
+.link{
+    font-size: 1.5em;
+}
+
+#avname{
+    font-size: 3em;
+}
+
+.right{
+    flex: 3;
+    height: 100%;
+}
+
+.fbox{
+    height: 31.6%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.9%;
+    width: 91%;
+    margin-left: 9%;
+    border: 4px solid black;
+}
+
+.ftop{
+    flex: 1;
+    display: flex;
+}
+
+.ftopL{
+    flex:1;
+    box-sizing: border-box;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.name{
+    font-size: 2.5em;
+}
+
+.ftopR {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.count, .count2, .count3{
+    font-size: 1.8em;
+}
+
+button{
+    width: 30%;
+    height: 40px;
+    background-color: rgb(249, 218, 120);
+    font-size: large;
+    box-shadow: 5px 2px 1px black;
+    border: 2px solid black;
+}
+
+.fbot{
+    flex: 1;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}

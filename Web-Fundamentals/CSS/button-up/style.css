@@ -1,0 +1,35 @@
+.search, .plus, .account {
+    display: block;
+    /* margin: 50px 50px 10px; */
+    height: 40px;
+} 
+
+.search {
+    margin: 50px 50px 10px;
+    width: 200px;
+    border: 2px solid rgb(55, 195, 192);
+    border-radius: 20px;
+    color:  rgb(55, 195, 192);
+    font-weight: 900;
+    font-size: large;
+    background-color: rgb(245, 245, 245);
+}
+
+.plus {
+    margin: 10px 50px 10px;
+    width: 40px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 25px;
+    background-color: turquoise;
+}
+.account {
+    margin: 10px 50px 10px;
+    width: 220px;
+    border: 2.5px solid black;
+    background-color: rgb(65, 118, 221);
+    box-shadow: 5px 3px 1px black ;
+    color: rgba(255, 246, 246, 0.892);
+    font-size: large;
+}

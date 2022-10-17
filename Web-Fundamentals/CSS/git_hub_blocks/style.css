@@ -1,0 +1,49 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 720px;
+    background-color: rgb(242, 244, 248);
+    margin: 0 auto;
+    text-align: center;
+    border-top: 3px solid black;
+    padding: 20px 20px 5px 20px;
+}
+
+h1{
+    color: rgb(89, 87, 87);
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.octocat{
+    height: 200px;
+}
+
+.one{
+    background-color: rgb(79, 197, 223);
+    justify-content: space-between;
+    margin-bottom: 15px;
+    }
+    
+.two{
+    background-color: rgb(205, 166, 190);
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+.three{
+    justify-content: space-evenly;
+    background-color: rgb(255, 255, 255);
+}
+
+.link a{
+    color: rgb(22, 191, 221);
+}
+
+.line{ 
+    display: flex;
+    padding: 20px;
+}

@@ -1,0 +1,297 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    height: 10vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+h1{
+    font-size: 300%;
+    margin-left: 2.5%;
+    margin-right: -15%;
+}
+
+.nav-links{
+    display: flex;
+    width: 48%;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 130%;
+    align-items: center;
+}
+
+li > a{
+    color: rgb(178, 177, 178);
+    text-decoration: none;
+}
+
+.active{
+    color: white;
+}
+
+.btn{
+    height: 35px;
+    width: 8%;
+    background-color: rgb(76, 159, 181);
+    color: white;
+    border: 2px solid black;
+    box-shadow: 5px 5px rgb(0, 0, 0);
+    font-size: large;
+    margin-right: 3%;
+}
+
+.mainbody{
+    display: flex;
+    width: 100vw;
+    height: 95vh;
+}
+
+.left{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 5vw;
+}
+
+.userbody, .edbody, .conreqbody, .urconbody{
+    border-left: 3px solid rgb(205 , 204, 205);
+    border-right: 3px solid rgb(205 , 204, 205);
+    border-bottom: 3px solid rgb(205 , 204, 205);
+}
+
+.usercard{
+    width: 75%;
+    height: 75%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.userhead{
+    height: 27%;
+    background-color: rgb(75, 159, 181);
+}
+
+#alayne{
+    border-radius: 50%;
+    margin-left: 5.5%;
+    margin-top: 8%;
+    height: 100%;
+    border: 4px solid rgb(205 , 204, 205);
+}
+
+.userbody{
+    height: 73%;
+    padding-top: 10%;
+    padding-left: 5%;
+}
+
+h2{
+    font-size: 4em;
+    margin-bottom: 5vh;
+}
+
+.location{
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+#marker{
+    height: 3vh;
+}
+
+label{
+    position: relative;
+    left: 1em;
+    font-size: 2em;
+}
+
+.information{
+    font-size: 1.5em;
+    margin-bottom: 5vh;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+}
+
+#gear{
+    height: 3vh;
+    margin-right: 1vw;
+}
+
+a{
+    color:  rgb(75, 159, 181);
+    font-size: 1.3em;
+}
+
+.education{
+    width: 75%;
+    height: 25%;
+}
+
+.edheader{
+    height: 30%;
+    background-color: rgb(55, 53, 53);
+    display: flex;
+    align-items: center;
+}
+
+h3{
+    font-size: 2.5em;
+    color: white;
+    margin-left:5%;
+}
+
+.edbody{
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 5%
+}
+
+.p-one{
+    font-size: 2em;
+}
+
+.p-two{
+    font-size: 1.5em;
+    color: grey;
+}
+
+.p-three{
+    font-size: 1.5em;
+}
+
+.right{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.conreq{
+    width: 62%;
+    height: 40%;
+    margin-top: 5vh;
+}
+
+.conreqheader, .urconheader{
+    height: 20%;
+    background-color: rgb(55, 53, 53);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reqnum{
+    color: rgb(0, 0, 0);
+    font-size: 2.2em;
+    background-color: rgb(155, 149, 155);
+    padding-right: 13px;
+    padding-left: 13px;
+    border-radius: 50%;
+    margin-left: 13px;
+}
+
+.cr{
+    margin-right: 13px;
+}
+
+.conreqbody{
+    height: 55%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profpics, .proflabels, .accept, .rej{ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.adrien, .anne{
+    border-radius: 50%;
+    margin-left: 5.5%;
+    margin-top: 8%;
+    border: 4px solid rgb(205 , 204, 205);
+    vertical-align: top;
+    height: 40%;
+}
+
+.proflabels{
+    padding-right:50px;
+}
+
+.acp{
+    margin-left: 5.5%;
+    margin-top: 8%;
+    margin-right: 10px;
+    height: 25%;
+    border: 0.00000001px solid grey;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.x{
+    margin-left: 5.5%;
+    margin-top: 8%;
+    margin-right: 5px;
+    height: 25%;
+    border: 0.00000001px solid grey;
+    vertical-align: top;
+    border-radius: 50%;
+}
+
+.urcon{
+    height: 50%;
+    width: 62%;
+    position: relative;
+}
+
+.urconheader{
+    height: 18%;
+    background-color: rgb(55, 53, 53);
+}
+
+.urconbody{
+    height: 80%;
+    display: flex;
+    padding-left: 20px;
+}
+
+.proflabels2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size:  15px;
+}
+
+.pics{
+    height: 20%;
+    border-radius: 50%;
+    margin-top: 8%;
+    border: 4px solid rgb(205 , 204, 205);
+    vertical-align: top;
+}
+
+.urconbottom{
+    border-left: 3px solid rgb(205 , 204, 205);
+    border-right: 3px solid rgb(205 , 204, 205);
+    border-bottom: 3px solid rgb(205 , 204, 205);
+    height: 15%;
+    padding-top: 20px;
+    padding-left: 25px;
+    font-size: large;
+}
