@@ -131,7 +131,7 @@ img {
 }
 
 .popup{ 
-    position: fixed;
+    /* position: fixed; */
     margin: 50px auto;
     border: 3px solid black;
     align-items: center;

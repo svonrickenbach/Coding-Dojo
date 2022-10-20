@@ -33,32 +33,32 @@ function convert(element) {
     }
 }
 
-// var high = document.querySelectorAll(".high")
-// var low = document.querySelectorAll(".low")
+var high = document.querySelectorAll(".high")
+var low = document.querySelectorAll(".low")
 
-// function convert(element) {
-//     for (let index = 0; index < high.length; index++) {
-//         if(element.value == "farenheight") {
-//             var numh = parseInt(high[index].innerText)
-//             numh = numh * 1.8 + 32;
-//             numh = numh.toFixed(0);
-//             high[index].innerText = numh
-//             var numl = parseInt(low[index].innerText)
-//             numl = numl * 1.8 + 32;
-//             numl = numl.toFixed(0);
-//             low[index].innerText = numl
-//         }
-//         else{
-//             var numh = parseInt(high[index].innerText)
-//             numh = (numh-32) / 1.8;
-//             numh = numh.toFixed(0);
-//             high[index].innerText = numh
-//             var numl = parseInt(low[index].innerText)
-//             numl = (numl - 32) / 1.8;
-//             numl = numl.toFixed(0);
-//             low[index].innerText = numl
-//         }
-//     }
-// }
+function convert(element) {
+    for (let index = 0; index < high.length; index++) {
+        if(element.value == "farenheight") {
+            var numh = parseInt(high[index].innerText)
+            numh = numh * 1.8 + 32;
+            numh = numh.toFixed(0);
+            high[index].innerText = numh
+            var numl = parseInt(low[index].innerText)
+            numl = numl * 1.8 + 32;
+            numl = numl.toFixed(0);
+            low[index].innerText = numl
+        }
+        else{
+            var numh = parseInt(high[index].innerText)
+            numh = (numh-32) / 1.8;
+            numh = numh.toFixed(0);
+            high[index].innerText = numh
+            var numl = parseInt(low[index].innerText)
+            numl = (numl - 32) / 1.8;
+            numl = numl.toFixed(0);
+            low[index].innerText = numl
+        }
+    }
+}
 
 
