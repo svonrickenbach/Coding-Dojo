@@ -126,10 +126,19 @@
     
 // console.log(sandwich.bread, sandwich.protein);
 
-var colors = document.querySelectorAll(".color");
+// var colors = document.querySelectorAll(".color");
     
-function applyColors(){
-    for(var i=0; i<colors.length; i++) {
-        colors[i].style.color = colors[i].innerText;
-    }
-}
+// function applyColors(){
+//     for(var i=0; i<colors.length; i++) {
+//         colors[i].style.color = colors[i].innerText;
+//     }
+// }
+
+var num = 35; 
+console.log(num)
+
+dec = 2.5
+console.log(dec)
+
+var rand_num = Math.floor(Math.random() * 4) + 2
+console.log(rand_num)
