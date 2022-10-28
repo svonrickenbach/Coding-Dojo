@@ -30,9 +30,25 @@
 #     else: print(x)
 #     x +=1 
 
-x=0
-for i in range(1, 500001):
-    if i % 2 != 0:
-        # print(i) 
-        x = x + i 
-print(x)
+# x=0
+# for i in range(1, 500001):
+#     if i % 2 != 0:
+#         # print(i) 
+#         x = x + i 
+# print(x)
+
+# for i in range(2018, 0, -4):
+#     print(i)
+
+# x = 2022
+# while x >= 4: 
+#     x = x - 4
+#     print(x)
+
+
+mult = 10
+lowNum = 1
+highNum = 20 
+for i in range(lowNum, highNum + 1):
+    if i % mult == 0:
+        print(i)
