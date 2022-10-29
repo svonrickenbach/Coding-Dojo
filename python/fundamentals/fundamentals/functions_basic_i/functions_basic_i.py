@@ -163,7 +163,7 @@
 # def bar():
 #     print(3)
 # foo()
-# # prediction: correct 
+# # prediction: incorrect (I think I just wrote too quickly) 
 # # 1 
 # # 2
 # # 3
@@ -185,3 +185,18 @@
 # # 3
 # # 5
 # # 10 
+
+# def number_of_great_lakes():
+#     print(5)
+# x = number_of_great_lakes()
+# print(x)
+
+# b = 500
+# print(b)
+# def foobar():
+#     b = 300
+#     print(b)
+#     return b
+# print(b)
+# b=foobar()
+# print(b)
