@@ -113,3 +113,33 @@
 # val = "string"
 # for i in range(0, 3):
 #     print(val[i])
+
+# def full_name(first, last):
+#     return first + " " + last
+
+# name1 = full_name("Eddie", "Aikau")
+# print(name1) # should print Eddie Aikau
+
+# def full_name(first, last):
+#     return first, last
+
+# name1 = full_name("Eddie", "Aikau")
+# print(name1) # should print Eddie Aikau
+
+# set defaults when declaring the parameters
+# def be_cheerful(name='', repeat=2):
+# 	print(f"good morning {name}\n" * repeat)
+# be_cheerful()
+# be_cheerful("tim")
+# be_cheerful(name="john")
+# be_cheerful(repeat=6)
+# be_cheerful("michael", 5)
+# be_cheerful(repeat=3, name="kb")
+
+def multiply(num_list, num):
+    for x in range(len(num_list)): 
+        num_list[x] *= num 
+    return num_list
+a = [2, 4, 10, 16]
+b = multiply(a, 5)
+print(b)
