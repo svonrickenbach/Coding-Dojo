@@ -10,50 +10,58 @@
 # x = countdown(5)
 # print(x)
 
-# def countdown(num):
-#     list = []
-#     for i in range(num, -1, -1):
-#         # print(i)
-#         list.append(i)
-#     return list
-# y = countdown(5)
-# print(y)
+def countdown(num):
+    list = []
+    for i in range(num, -1, -1):
+        # print(i)
+        list.append(i)
+    return list
+y = countdown(5)
+print(y)
 
 # 2. Print and Return - Create a function that will receive a list with two numbers. Print the first value and return the second.
 # Example: print_and_return([1,2]) should print 1 and return 2
 
-# def print_return(list):
-#     print(list[0])
-#     return list[1]
-# x = print_return([1,2])
-# print(x)
+def print_return(list):
+    print(list[0])
+    return list[1]
+x = print_return([1,2])
+print(x)
 
 # 3. First Plus Length - Create a function that accepts a list and returns the sum of the first value in the list plus the list's length.
 # Example: first_plus_length([1,2,3,4,5]) should return 6 (first value: 1 + length: 5)
 
-# def first_plus_length(list):
-#     return list[0] + len(list)
-# x = first_plus_length([1,2,3,4,5])
-# print(x)
+def first_plus_length(list):
+    return list[0] + len(list)
+x = first_plus_length([1,2,3,4,5])
+print(x)
 
 # 4. Values Greater than Second - Write a function that accepts a list and creates a new list containing only the values from the original list that are greater than its 2nd value. Print how many values this is and then return the new list. If the list has less than 2 elements, have the function return False
 # Example: values_greater_than_second([5,2,3,2,1,4]) should print 3 and return [5,3,4]
 # Example: values_greater_than_second([3]) should return False
 
-# def values(list):
-#     newlist = []
-#     for i in (list):
-#         # print((i))
-#         if len(list) < 3:
-#             return False
-#         elif i > list[1]:
-#             newlist.append(i)
-#     print(len(newlist))
-#     return newlist
-# x = values([2, 1, 3, 4])
-# print(x)
+def values(list):
+    newlist = []
+    for i in (list):
+        # print((i))
+        if len(list) < 3:
+            return False
+        elif i > list[1]:
+            newlist.append(i)
+    print(len(newlist))
+    return newlist
+x = values([5,2,3,2,1,4])
+print(x)
 
 # 5. This Length, That Value - Write a function that accepts two integers as parameters: size and value. The function should create and return a list whose length is equal to the given size, and whose values are all the given value.
 # Example: length_and_value(4,7) should return [7,7,7,7]
 # Example: length_and_value(6,2) should return [2,2,2,2,2,2]
 
+def this_length_that_value(size, value):
+    list = []
+    for i in range(size):
+        list.append(value)
+    return(list)
+
+x = this_length_that_value(6,2)
+print(x)
