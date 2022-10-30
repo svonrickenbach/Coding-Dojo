@@ -136,10 +136,86 @@
 # be_cheerful("michael", 5)
 # be_cheerful(repeat=3, name="kb")
 
-def multiply(num_list, num):
-    for x in range(len(num_list)): 
-        num_list[x] *= num 
-    return num_list
-a = [2, 4, 10, 16]
-b = multiply(a, 5)
-print(b)
+# def multiply(num_list, num):
+#     for x in range(len(num_list)): 
+#         num_list[x] *= num 
+#     return num_list
+# a = [2, 4, 10, 16]
+# b = multiply(a, 5)
+# print(b)
+
+# x = "hello"
+# x.upper()
+# print(x.upper())
+
+person = {"first_name": "ben",
+        "last_name": "Rickenbach",
+        "age": 28, 
+        "has pets": True}
+
+# print(person)
+
+# person["email"] = "samrickenbach@gmail.com"
+
+# if "last_name" not in person: 
+#     person["last_name"] = "vonrickenbach"
+
+# else: 
+#     print("Would you like me to update the last name of this profile?")
+
+# print(person)
+
+# value_removed = person.pop("first_name")
+# print(value_removed)
+
+# del person["first_name"]
+# print(person)
+
+# print(person.clear())
+
+# print(person)
+
+# print(person.get("first_name"))
+
+# person.update({"first_name": "ben", "last_name": "vonrickenbach"})
+
+# print(person)
+
+# for i in person: 
+#     print(i)
+
+# for i in person: 
+#     print(person[i])
+
+# for i in person.keys():
+#     print(i)
+
+# for i in person.values():
+#     print(i)
+
+# for x, i in person.items():
+#     print(x, "=", i)
+
+# person = ["Sam", "Rickenbach", "dog"]
+
+# for i in range(len(person)): 
+#     print(person[i])
+
+# List of dictionaries
+users = [
+    {"first": "Ada", "last": "Lovelace"}, # index 0
+    {"first": "Alan", "last": "Turing"}, # index 1
+    {"first": "Eric", "last": "Idle"} # index 2
+]
+# Dictionary of lists
+resume_data = {
+    #        	     0           1           2
+    "skills": ["front-end", "back-end", "database"],
+    #                0           1
+    "languages": ["Python", "JavaScript"],
+    #                0              1
+    "hobbies":["rock climbing", "knitting"]
+}
+
+print(resume_data["skills"][1])
+print(users[2]["first"])
