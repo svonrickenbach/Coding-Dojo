@@ -219,3 +219,17 @@ resume_data = {
 
 print(resume_data["skills"][1])
 print(users[2]["first"])
+
+def funkyFunc():
+    return 1,2,'awesome'
+
+var1, var2, var3 = funkyFunc()
+
+print(var1) # prints 1
+print(var2) # prints 2
+print(var3) # prints 'awesome'
+
+x, y, z = 5, 10, 50 
+print(x, y, z)
+print(y)
+print(z)
