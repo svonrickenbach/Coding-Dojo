@@ -42,8 +42,7 @@ print(x)
 
 def values(list):
     newlist = []
-    for i in (list):
-        # print((i))
+    for i in list:
         if len(list) < 3:
             return False
         elif i > list[1]:
