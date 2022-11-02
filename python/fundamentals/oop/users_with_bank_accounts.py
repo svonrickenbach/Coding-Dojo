@@ -118,12 +118,12 @@ class User:
         self.gold_card_points += add
         return self
 
-    def make_deposit(self, amount1, amount2):
+    def make_deposit(self, amount1=0, amount2=0):
         self.account.deposit(amount1)
         self.account2.deposit(amount2)
         return self
     
-    def make_withdrawl(self, amount, amount2):
+    def make_withdrawl(self, amount=0, amount2=0):
         self.account.withdraw(amount)
         self.account2.withdraw(amount2)
         return self
@@ -138,15 +138,14 @@ class User:
         self.account.balance = self.account.balance + amount
         self = other_user
         self.account.balance = self.account.balance - amount
+        return self
 
 
 kara_cooper = User("Kara", "Cooper", "Cooper@gmail.com", 33)
 sam_rickenbach = User("Sam", "Rickenbach", "samrickenbach@gmail.com", 28)
 
-kara_cooper.make_deposit(600, 0)
-sam_rickenbach.make_deposit(100, 0)
-
-sam_rickenbach.transfer_money(100, kara_cooper)
-kara_cooper.display_user_balance()
+sam_rickenbach.make_deposit(200, 500).make_withdrawl(100).transfer_money(100, kara_cooper)
+kara_cooper.make_deposit(600).make_withdrawl(100).display_user_balance()
 sam_rickenbach.display_user_balance()
+
 
