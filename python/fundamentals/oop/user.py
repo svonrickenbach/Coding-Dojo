@@ -48,12 +48,12 @@ sam_rickenbach.enroll()
 
 sam_rickenbach.enroll()
 
-sam_rickenbach.display_info()
+sam_rickenbach.display_info().spend_points()
 # kara_cooper.display_info()
 # sampson_middel.spend_points(240)
 # sampson_middel.display_info()
 
-sam_rickenbach.add_point(50)
-sam_rickenbach.enroll()
+# sam_rickenbach.add_point(50)
+# sam_rickenbach.enroll()
 
-sam_rickenbach.display_info()
+# sam_rickenbach.display_info()
