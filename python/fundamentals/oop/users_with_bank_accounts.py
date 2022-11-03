@@ -144,7 +144,7 @@ class User:
 kara_cooper = User("Kara", "Cooper", "Cooper@gmail.com", 33)
 sam_rickenbach = User("Sam", "Rickenbach", "samrickenbach@gmail.com", 28)
 
-sam_rickenbach.make_deposit(200, 500).make_withdrawl(100).transfer_money(100, kara_cooper)
+sam_rickenbach.make_deposit(300, 500).make_withdrawl(100).transfer_money(50, kara_cooper)
 kara_cooper.make_deposit(600).make_withdrawl(100).display_user_balance()
 sam_rickenbach.display_user_balance()
 
