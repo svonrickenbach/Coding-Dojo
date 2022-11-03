@@ -20,47 +20,6 @@ class BankAccount:
         return self
     
     def display(self):
-        print("=================")
-        print("Account 1:")
-        print(f"Interest Rate: {self.int_rate}")
-        print(f"Balance: {self.balance}")
-        print("=================")
-        return self
-
-    def interest_rate(self):
-        if self.balance > 0: 
-            self.balance *= 1 + self.int_rate
-        return self
-    
-    @classmethod
-    def all_info(cls):
-        for accounts in cls.all_accounts:
-            accounts.display()
-
-class BankAccount2: 
-    
-    all_accounts = []
-
-    def __init__(self, int_rate, balance):
-        self.int_rate = int_rate
-        self.balance = balance 
-        BankAccount.all_accounts.append(self)
-
-    def deposit(self, amount):
-        self.balance = self.balance + amount
-        return self
-
-    def withdraw(self, amount):
-        if self.balance >= amount:
-            self.balance = self.balance - amount
-        else: 
-            print("Insufficient funds: Charging a $5 fee")
-            self.balance -= 5
-        return self
-    
-    def display(self):
-        print("=================")
-        print("Account 2:")
         print(f"Interest Rate: {self.int_rate}")
         print(f"Balance: {self.balance}")
         print("=================")
@@ -85,7 +44,7 @@ class User:
         self.is_rewards_member = False
         self.gold_card_points = 0 
         self.account = BankAccount (int_rate=0.2, balance=0)
-        self.account2 = BankAccount2 (int_rate=0.5, balance=0)
+        self.account2 = BankAccount (int_rate=0.5, balance=0)
     
     def display_info(self):
         print("--------------------")
@@ -130,22 +89,24 @@ class User:
     
     def display_user_balance(self):
         print(self.first_name, self.last_name)
+        print("=================")
+        print("Account 1:")
         self.account.display()
+        print("=================")
+        print("Account 2:")
         self.account2.display()
         return self
 
     def transfer_money(self, amount, other_user):
         self.account.balance = self.account.balance + amount
-        self = other_user
-        self.account.balance = self.account.balance - amount
+        other_user.account.balance = other_user.account.balance - amount
         return self
 
 
 kara_cooper = User("Kara", "Cooper", "Cooper@gmail.com", 33)
 sam_rickenbach = User("Sam", "Rickenbach", "samrickenbach@gmail.com", 28)
 
-sam_rickenbach.make_deposit(300, 500).make_withdrawl(100).transfer_money(50, kara_cooper)
+sam_rickenbach.make_deposit(300, 500).make_withdrawl(100).transfer_money(100, kara_cooper).display_user_balance()
 kara_cooper.make_deposit(600).make_withdrawl(100).display_user_balance()
-sam_rickenbach.display_user_balance()
 
 
