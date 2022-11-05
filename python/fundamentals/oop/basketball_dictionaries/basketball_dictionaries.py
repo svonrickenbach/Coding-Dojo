@@ -38,7 +38,7 @@ print(player_kyrie)
 
 # # Challenge #3:
 
-new_team = []
+new_team = [] 
 
 for player in basketball_dictionaries_db.players:
     # print(player)
