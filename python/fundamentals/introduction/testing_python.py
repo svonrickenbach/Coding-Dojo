@@ -202,34 +202,37 @@ person = {"first_name": "ben",
 #     print(person[i])
 
 # List of dictionaries
-users = [
-    {"first": "Ada", "last": "Lovelace"}, # index 0
-    {"first": "Alan", "last": "Turing"}, # index 1
-    {"first": "Eric", "last": "Idle"} # index 2
-]
-# Dictionary of lists
-resume_data = {
-    #        	     0           1           2
-    "skills": ["front-end", "back-end", "database"],
-    #                0           1
-    "languages": ["Python", "JavaScript"],
-    #                0              1
-    "hobbies":["rock climbing", "knitting"]
-}
+# users = [
+#     {"first": "Ada", "last": "Lovelace"}, # index 0
+#     {"first": "Alan", "last": "Turing"}, # index 1
+#     {"first": "Eric", "last": "Idle"} # index 2
+# ]
+# # Dictionary of lists
+# resume_data = {
+#     #        	     0           1           2
+#     "skills": ["front-end", "back-end", "database"],
+#     #                0           1
+#     "languages": ["Python", "JavaScript"],
+#     #                0              1
+#     "hobbies":["rock climbing", "knitting"]
+# }
 
-print(resume_data["skills"][1])
-print(users[2]["first"])
+# print(resume_data["skills"][1])
+# print(users[2]["first"])
 
-def funkyFunc():
-    return 1,2,'awesome'
+# def funkyFunc():
+#     return 1,2,'awesome'
 
-var1, var2, var3 = funkyFunc()
+# var1, var2, var3 = funkyFunc()
 
-print(var1) # prints 1
-print(var2) # prints 2
-print(var3) # prints 'awesome'
+# print(var1) # prints 1
+# print(var2) # prints 2
+# print(var3) # prints 'awesome'
 
-x, y, z = 5, 10, 50 
-print(x, y, z)
-print(y)
-print(z)
+# x, y, z = 5, 10, 50 
+# print(x, y, z)
+# print(y)
+# print(z)
+
+favorite_color = input('What is your favorite color? ') 
+print(f'Your favorite color is: {favorite_color}')
