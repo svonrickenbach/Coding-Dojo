@@ -148,10 +148,10 @@
 # x.upper()
 # print(x.upper())
 
-person = {"first_name": "ben",
-        "last_name": "Rickenbach",
-        "age": 28, 
-        "has pets": True}
+# person = {"first_name": "ben",
+#         "last_name": "Rickenbach",
+#         "age": 28, 
+#         "has pets": True}
 
 # print(person)
 
@@ -234,5 +234,19 @@ person = {"first_name": "ben",
 # print(y)
 # print(z)
 
-favorite_color = input('What is your favorite color? ') 
-print(f'Your favorite color is: {favorite_color}')
+# favorite_color = input('What is your favorite color? ') 
+# print(f'Your favorite color is: {favorite_color}')
+
+# class User: 
+#         species = 'Homo Spaiens'
+#         def __init__(self, name):
+#                 self.name = name
+#                 self.list = 1 
+
+
+# use1 = User("sam") 
+# use1.list = ["chrondo", "mondo"]
+# print(use1)
+# print(use1.name)
+# print(use1.species)
+# print(use1.list) 
