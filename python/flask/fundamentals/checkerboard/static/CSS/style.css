@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+}
+h1{ 
+    text-align: center;
+    color: black;
+    margin-top: 50px;
+}
+.checkerboard{
+    margin-top: 50px;
+    width: 1080px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+}
+.square{
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    /* background-color: black; */
+}
+/* .square2{
+    text-align: center;
+    background-color: red;
+    height: 100px;
+    width: 100px;
+} */
