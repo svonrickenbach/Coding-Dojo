@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{ 
+    margin: 0 auto; 
+    margin-top: 50px;
+    text-align: center;
+    width: 1080px;
+    display: flex;
+    justify-content: center;
+}
+
+
+thead{
+    text-align: center;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+.theaderrow{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;;
+    width: 200px;
+    height: 30px;
+    background-color: rgb(55, 54, 54);
+    color: rgb(255, 204, 0);
+    border-collapse: collapse;
+}
+
+td{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;;
+    width: 200px;
+    height: 30px;
+}
