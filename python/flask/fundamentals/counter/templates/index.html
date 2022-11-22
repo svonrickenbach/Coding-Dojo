@@ -8,9 +8,12 @@
 </head>
 <body>
     <h1>Counter</h1>
-    <form action="/countup" method="post">
-        <label for="count">{{session['count']}}</label>
-        <input type="submit" name="count" value="0" >
+    <h2>Page Visits: {{session['page_visits']}}</h2>
+    <h2>Counter: {{session['counter']}}</h2>
+    <form action="/plus2" method="post">
+        <input type="submit" name = button value = "Add 2">
+        <input type="submit" name=button value = "reset">
+        <input type="number" name = num value>
     </form>
 </body>
 </html>
