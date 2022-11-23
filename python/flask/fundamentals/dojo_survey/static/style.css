@@ -41,6 +41,8 @@ input, select{
 
 textarea{
     margin-left: 40px;
+    margin-right: 40px;
+    width : 84%;
 }
 
 .button{
