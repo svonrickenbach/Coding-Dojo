@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="card">
+        <h1>Dojo Survey</h1>
+        <form action="/form_submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name">
+            <label for="Dojo">Dojo Location:</label>
+            <select name="dojo" id="dojo">
+                <option value="">--SELECT ONE--</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Portland">Portland</option>
+                <option value="Seattle">Seattle</option>
+                <option value="San Francisco">San Francisco</option>
+            </select>
+            <label for="favorite_language">Favorite Language:</label>
+            <select name="language" id="language">
+                <option value="">--SELECT ONE--</option>
+                <option value="Python">Python</option>
+                <option value="Java Script">Java Script</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="Swift">Swift</option>
+            </select>
+            <label for="">Do you absolutely hate CSS?</label>
+            <label for='CSS_Hate'>Yes</label>
+            <input type="radio" name="CSS_Hate" checked value="Yes">
+            <label for="CSS_Hate">No</label>
+            <input type="radio" name='CSS_Hate' value="No">
+            <label for="CSS sucks">Is CSS the absolute worst?</label>
+            <input type="checkbox" name="accept" checked>
+            <label for="comments">Comments:</label>
+            <textarea name="comments" id="comments" cols="80" rows="10"></textarea>
+            <input class = "button" type="submit" name="submit">
+        </form>
+    </div>
+</body>
+</html>
+
