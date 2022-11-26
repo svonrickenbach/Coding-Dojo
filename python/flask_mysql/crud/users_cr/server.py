@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, request, session 
 from users import User
+from mysqlconnection import MySQLConnection
+
 app = Flask(__name__)
 app.secret_key = "hallabaloo"
 
@@ -36,7 +38,11 @@ def display_one_user(id):
 
 @app.route('/users/<int:id>/edit')
 def edit_page(id):
-    return render_template("edit.html", id1 = id)
+    for user in User.get_all():
+        index = user.id
+        if id == index:
+            user1 = user 
+    return render_template("edit.html", id1 = id, current_user = user1)
 
 @app.route('/edit/<int:id>', methods=["POST"])
 def edit(id):

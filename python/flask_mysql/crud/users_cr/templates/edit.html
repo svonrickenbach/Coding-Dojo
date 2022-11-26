@@ -12,18 +12,19 @@
     <div class="page-header center-block">
         <h1>Edit User</h1>
     </div>
+    <a class="home-link" href="/users">Home</a>
         <form action="/edit/{{id1}}" method="post">
             <div class="form-group">
                 <label for="fname">First Name</label>
-                <input type="text" class="form-control" name="fname" placeholder="First Name">
+                <input type="text" class="form-control" name="fname" value="{{current_user.first_name}}">
             </div>
             <div class="form-group">
                 <label for="lname">Last Name</label>
-                <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                <input type="text" class="form-control" name="lname" value="{{current_user.last_name}}">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Email">
+                <input type="email" class="form-control" name="email" value="{{current_user.email}}">
             </div>
             <button type="submit" class="btn btn-default">Update</button>
         </form>
