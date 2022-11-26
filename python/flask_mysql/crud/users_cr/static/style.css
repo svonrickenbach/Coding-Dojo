@@ -37,3 +37,17 @@ input{
     border: 2px solid rgb(162, 161, 161);
     margin-top: -50px;
 }
+
+.home-link{
+    margin-left: 1850px;
+}
+
+h3{
+    margin-bottom: 50px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}

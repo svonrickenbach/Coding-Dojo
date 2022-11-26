@@ -16,11 +16,16 @@ class User:
         # print(results)
         users = []
         for user in results:
-            print(user)
+            # print(user)
             users.append(cls(user))
         return users
 
     @classmethod
     def save(cls, data):
         query = "INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES (%(fname)s, %(lname)s, %(email)s, NOW(), NOW());"
+        return connectToMySQL('users_schema').query_db(query, data)
+
+    @classmethod
+    def update(cls, data):
+        query = "UPDATE users SET first_name = %(fname)s, last_name = %(lname)s, email = %(email)s, updated_at = NOW (), WHERE id = 1"
         return connectToMySQL('users_schema').query_db(query, data)
