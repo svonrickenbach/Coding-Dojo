@@ -21,6 +21,6 @@
         <h3>Created On: {{current_user.created_at}}</h3>
         <h3>Last Update: {{current_user.updated_at}}</h3>
     </div>
-    <p><a href="">Edit</a> | <a href="">Delete</a></p>
+    <p><a href="/users/{{current_user.id}}/edit">Edit</a> | <a href="/delete/{{current_user.id}}">Delete</a></p>
 </body>
 </html>
