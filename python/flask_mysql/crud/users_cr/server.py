@@ -27,7 +27,6 @@ def create_user():
 
 @app.route('/users/<int:id>')
 def display_one_user(id):
-    user_list = []
     for user in User.get_all():
         index = user.id
         if id == index:
@@ -35,18 +34,27 @@ def display_one_user(id):
     return render_template('read_one.html', current_user = user1)
 
 
-@app.route('/users/<id>/edit')
-def edit_page():
-    return render_template("edit.html")
+@app.route('/users/<int:id>/edit')
+def edit_page(id):
+    return render_template("edit.html", id1 = id)
 
-@app.route('/edit', methods=["POST"])
-def edit():
+@app.route('/edit/<int:id>', methods=["POST"])
+def edit(id):
     data = {
     "fname" : request.form["fname"],
     "lname" : request.form["lname"],
     "email" : request.form["email"],
+    "current_id" : id
     }
     User.update(data)
+    return redirect('/users')
+
+@app.route('/delete/<int:id>')
+def delete(id):
+    data = {
+    "current_id" : id
+    }
+    User.delete(data)
     return redirect('/users')
 
 
