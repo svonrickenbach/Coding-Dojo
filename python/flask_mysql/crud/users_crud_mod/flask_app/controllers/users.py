@@ -50,7 +50,7 @@ def edit(id):
     "current_id" : id
     }
     User.update(data)
-    return redirect('/users')
+    return redirect(f'/users/{id}')
 
 @app.route('/delete/<int:id>')
 def delete(id):

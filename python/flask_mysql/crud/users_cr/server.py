@@ -25,6 +25,7 @@ def create_user():
         "email" : request.form["email"],
     }
     User.save(data)
+    MySQLConnection.query_db
     return redirect('/users')
 
 @app.route('/users/<int:id>')
@@ -53,7 +54,7 @@ def edit(id):
     "current_id" : id
     }
     User.update(data)
-    return redirect('/users')
+    return redirect(f'/users/{id}')
 
 @app.route('/delete/<int:id>')
 def delete(id):
