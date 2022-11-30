@@ -27,7 +27,7 @@
                 <td>{{one_dojo.first_name}}</td>
                 <td>{{one_dojo.last_name}}</td>
                 <td>{{one_dojo.age}}</td>
-                <td></a><a href='/ninjas/edit/{{one_dojo.id}}'>Edit | </a> <a href=>Delete</a></td>
+                <td></a><a href='/ninjas/edit/{{one_dojo.id}}'>Edit | </a> <a href='/delete/{{current_dojo.id}}/{{one_dojo.id}}'>Delete</a></td>
             </tr>
         {%endfor%}
         </tbody>

@@ -9,7 +9,7 @@
     <title>Dojos and Ninjas</title>
 </head>
 <body>
-    <h1>Edit Ninja</h1>
+    <h1>Edit {{ninja.first_name}} {{ninja.last_name}}</h1>
     <form class="form-horizontal" action="/ninjas/editing/{{ninja.id}}" method="post">
         <input type="hidden" >
         <div class="form-group">
@@ -46,5 +46,6 @@
             </div>
         </div>
     </form>
+    <a href="/dojos" class="home-link">Home</a>
 </body>
 </html>

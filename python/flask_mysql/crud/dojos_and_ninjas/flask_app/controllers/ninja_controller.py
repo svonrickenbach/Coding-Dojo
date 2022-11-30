@@ -39,3 +39,12 @@ def edit(user_id):
     }
     Ninja.update(data)
     return redirect(f"/dojos/{request.form['dojo.id']}")
+
+@app.route('/delete/<int:current_dojo_id>/<int:ninja_id>')
+def delete(ninja_id, current_dojo_id): 
+    data = {
+        "current_id": ninja_id
+    }
+    Ninja.delete(data)
+    current_dojo_id
+    return redirect(f"/dojos/{current_dojo_id}")
