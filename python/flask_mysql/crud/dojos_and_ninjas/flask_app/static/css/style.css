@@ -1,3 +1,42 @@
 *{
     box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+h2{
+    margin-bottom: 50px;
+}
+
+.btn{
+    margin-top: 20px;
+    border: 1px solid rgb(80, 79, 79);
+    margin-left: -90px;
+}
+
+.container{
+    display: flex;
+}
+
+.box{ 
+    border: 2px solid black;
+    width: 200px;
+    padding: 0 50px;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+.form-group{
+    display: flex;
+    width: 1000px;
+}
+
+input{
+    margin:0 auto;
 }
