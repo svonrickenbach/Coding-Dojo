@@ -18,3 +18,24 @@ def add_ninja():
     print(data)
     Ninja.save(data)
     return redirect(f"/dojos/{request.form['dojo.id']}")
+
+@app.route('/ninjas/edit/<int:ninjas_id>')
+def edit_page(ninjas_id):
+    data = {
+        "ninja_id" : ninjas_id
+    }
+    Ninja.get_one(data)
+    print(Ninja.get_one(data).id)
+    return render_template('edit.html', dojos=dojo.Dojo.get_all(), ninja=Ninja.get_one(data))
+
+@app.route('/ninjas/editing/<int:user_id>', methods=["POST"])
+def edit(user_id):
+    data = {
+        "current_id" : user_id,
+        "dojo" : request.form["dojo.id"],
+        "fname" : request.form["fname"],
+        "lname" : request.form["lname"],
+        "age" : request.form["age"],
+    }
+    Ninja.update(data)
+    return redirect(f"/dojos/{request.form['dojo.id']}")
