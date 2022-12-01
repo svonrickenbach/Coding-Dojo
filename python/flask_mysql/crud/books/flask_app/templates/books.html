@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>Authors</title>
+</head>
+<body>
+    <h1>Books</h1>
+    <div class="container">
+        <div class="left">
+            <h2>New Book</h2>
+            <form action='/book/add' method="post">
+                <label for="title">Title:</label>
+                <input type="text" name="title"> <br>
+                <label for="num_of_pages">Number of Pages:</label>
+                <input type="text" name="num_of_pages">
+                <br>
+                <button>Create</button>
+            </form>
+        </div>
+        <div class="right">
+            <h2>All Books</h2>
+            <div class="box">
+                {%for book in all_books%}
+                <a href="/book/{{book.id}}">{{book.title}}</a>
+                {%endfor%}
+            </div>
+            <a href="/ninjas">Add Author</a>
+        </div>
+    </div>
+</body>
+</html>

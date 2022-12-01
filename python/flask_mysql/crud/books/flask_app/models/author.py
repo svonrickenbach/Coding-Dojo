@@ -22,3 +22,8 @@ class Author:
     def save(cls, data):
         query = "INSERT INTO authors (name, created_at, updated_at) VALUES (%(name)s, NOW(), NOW());"
         return connectToMySQL('books_schema').query_db(query, data)
+
+    @classmethod
+    def get_dojo_with_ninjas(cls, data):
+        query = "SELECT * FROM dojos LEFT JOIN ninjas ON dojos.id = ninjas.dojo_id WHERE dojos.id = %(dojo_id)s;"
+        results = connectToMySQL('dojos_and_ninjas_schema').query_db(query, data)

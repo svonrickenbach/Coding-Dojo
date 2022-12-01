@@ -15,5 +15,5 @@ def add_author():
     return redirect('/authors')
 
 @app.route('/author/<int:author_id>')
-def show_one_author():
-    pass
+def show_one_author(author_id):
+    return render_template('single_author.html')
