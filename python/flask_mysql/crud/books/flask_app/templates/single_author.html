@@ -9,25 +9,27 @@
     <title>Author</title>
 </head>
 <body>
-    <h1>Authors</h1>
+    <h1>{{one_author.name}}</h1>
     <div class="container">
         <div class="left">
-            <h2>New Author</h2>
-            <form action='/author/add' method="post">
-                <label for="new_author">Name:</label>
-                <input type="text" name="name">
-                <br>
-                <button>Create</button>
-            </form>
-        </div>
-        <div class="right">
-            <h2>All Authors</h2>
+            <h2>{{one_author.name}}'s Favorites</h2>
             <div class="box">
-                {%for author in all_authors%}
-                    <a href="/author/{{author.id}}">{{author.name}}</a>
+                {%for book in one_author.books%}
+                <a href=>{{book.title}}</a>
                 {%endfor%}
             </div>
-            <a href="/ninjas">Add Book</a>
+            <a href="/authors">Home</a>
+        </div>
+        <div class="right">
+            <h2>Add Author's Favorite</h2>
+            <form action="/add_book_to_author", method="post">
+                <select name="book_id">
+                    {%for book in books%}
+                        <option value="{{book.id}}">{{book.title}}</option>
+                    {%endfor%}
+                    </select>
+                <button>Add Book</button>
+            </form>
         </div>
     </div>
 </body>
