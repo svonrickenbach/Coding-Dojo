@@ -20,7 +20,6 @@ def show_one_book(book_id):
     }
     session['book_id'] = book_id
     one_book = book.Book.get_book_with_author(data)
-    print(one_book.title)
     return render_template('single_book.html', one_book = book.Book.get_book_with_author(data), authors = book.Book.book_favorited_authors_excluded(data))
 
 @app.route('/add_author_to_book', methods=["POST"])
