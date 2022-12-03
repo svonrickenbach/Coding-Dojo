@@ -21,15 +21,13 @@ def show_one_author(author_id):
         "author_id" : author_id
     }
     session['author_id'] = author_id
-    one_author = author.Author.get_author_with_fav_books(data)
-    print(one_author)
-    return render_template('single_author.html', one_author = author.Author.get_author_with_fav_books(data), books = book.Book.get_all())
+    return render_template('single_author.html', one_author = author.Author.get_author_with_fav_books(data), books = author.Author.author_favorited_books_excluded(data))
 
 @app.route('/add_book_to_author', methods=["POST"])
 def add_book_to_author():
     data = {
         "book_id" : request.form['book_id'],
         "author_id" : session['author_id']
-    }
+    } 
     author.Author.save_book_to_author(data)
     return redirect(f"/author/{session['author_id']}")
