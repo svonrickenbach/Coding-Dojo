@@ -12,21 +12,28 @@
     <div class="page-header center-block">
         <h1>Add New User</h1>
     </div>
-    <a class="home-link" href="/users">Home</a>
+    {%with messages = get_flashed_messages() %}
+        {%if messages%}
+            {%for message in messages%}
+                <p>{{message}}</p>
+            {%endfor%}
+        {%endif%}
+    {%endwith%}
         <form action="/create_users" method="post">
             <div class="form-group">
                 <label for="fname">First Name</label>
-                <input type="text" class="form-control" name="fname" placeholder="First Name">
+                <input type="text" class="form-control" name="fname" placeholder="First Name" value="{{session['fname']}}">
             </div>
             <div class="form-group">
                 <label for="lname">Last Name</label>
-                <input type="text" class="form-control" name="lname" placeholder="Last Name">
+                <input type="text" class="form-control" name="lname" placeholder="Last Name" value="{{session['lname']}}">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" placeholder="Email">
+                <input type="text" class="form-control" name="email" placeholder="Email" value="{{session['email']}}">
             </div>
             <button type="submit" class="btn btn-default">Create</button>
         </form>
+        <a class="home-link" href="/users">Home</a>
 </body>
 </html>

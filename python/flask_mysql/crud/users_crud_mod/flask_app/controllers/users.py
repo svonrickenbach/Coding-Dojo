@@ -21,7 +21,13 @@ def create_user():
         "lname" : request.form["lname"],
         "email" : request.form["email"],
     }
+    if not User.validate_user(data):
+        session['fname'] = request.form['fname']
+        session['lname'] = request.form['lname']
+        session['email'] = request.form['email']
+        return redirect('/')
     User.save(data)
+    session.clear()
     return redirect('/users')
 
 @app.route('/users/<int:id>')
