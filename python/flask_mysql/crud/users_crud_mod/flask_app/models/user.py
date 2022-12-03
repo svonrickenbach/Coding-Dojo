@@ -46,7 +46,7 @@ class User:
         email_list = []
         for email in results: 
             email_list.append(email)
-        # print(email_list)
+        print(email_list)
         return email_list
 
     @staticmethod
