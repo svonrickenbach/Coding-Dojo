@@ -38,6 +38,17 @@ class User:
         query = "DELETE FROM users WHERE id = %(current_id)s;"
         return connectToMySQL('users_schema').query_db(query, data)
 
+    @classmethod
+    def get_emails(cls):
+        query = "SELECT email FROM users;"
+        results = connectToMySQL('users_schema').query_db(query)
+        # print(results)
+        email_list = []
+        for email in results: 
+            email_list.append(email)
+        # print(email_list)
+        return email_list
+
     @staticmethod
     def validate_user(user): 
         is_valid = True
@@ -49,5 +60,8 @@ class User:
             is_valid = False
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!")
+            is_valid = False
+        if user['email'] in User.get_emails():
+            flash("Invalid email address! ")
             is_valid = False
         return is_valid
