@@ -21,6 +21,7 @@ def create_user():
         "lname" : request.form["lname"],
         "email" : request.form["email"],
     }
+    User.get_emails(data)
     if not User.validate_user(data):
         session['fname'] = request.form['fname']
         session['lname'] = request.form['lname']
