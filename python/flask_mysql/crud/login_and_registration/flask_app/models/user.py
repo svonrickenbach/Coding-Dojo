@@ -44,16 +44,6 @@ class User:
         # print(results)
         return cls(results[0]) 
 
-    @classmethod
-    def get_emails(cls, data):
-        query = "SELECT email FROM users WHERE email = %(email)s;"
-        results = connectToMySQL(mydb).query_db(query, data)
-        if len(results) > 0:
-            # print(results)
-            return results[0]["email"]
-        else: 
-            pass
-
     @classmethod 
     def get_by_email(cls, data):
         print(data)
@@ -85,9 +75,8 @@ class User:
         elif not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!", 'regError')
             is_valid = False
-        if User.get_emails(user) != None:
-            if user['email'] in User.get_emails(user):
-                flash("Invalid email address! ")
+        if User.get_by_email(user) != False:
+                flash("Invalid email address! ", 'regError')
                 is_valid = False
         if len(user['password']) < 1: 
             flash("must enter a password", 'regError')

@@ -8,15 +8,10 @@ dateFormat = "%m/%d/%Y %I:%M %p"
 
 @app.route('/')
 def login_reg():
-    session.clear()
     return render_template("login_reg.html")
 
 @app.route('/register', methods=['POST'])
 def register():
-    data = {
-        "email" : request.form["email"]
-    }
-    user.User.get_emails(data)
     if user.User.validate_user(request.form):
         pw_hash = bcrypt.generate_password_hash(request.form['password'])
         data = {
@@ -40,15 +35,10 @@ def login():
         if bcrypt.check_password_hash(user_in_db.password, request.form['password']):
             session['user_id'] = user_in_db.id
             return redirect("/home")
-    # validate user input
-    # store the suer in session
-    # redirect to home
     flash("Invalid Email/Password", 'loginError')
     return redirect('/')
 
 @app.route('/logout')
 def logout():
-    # clear session
     session.clear()
-    # redirect to root route
     return redirect('/')

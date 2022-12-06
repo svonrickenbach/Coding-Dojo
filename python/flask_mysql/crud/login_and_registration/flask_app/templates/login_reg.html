@@ -13,12 +13,12 @@
             <h2 class="register">Register</h2>
             <form action="/register" method="post">
                 {% with messages = get_flashed_messages(category_filter=['regError']) %}
-                    {%if messages%}
-                        {%for message in messages%}
+                    {% if messages %}
+                        {% for message in messages %}
                             <p>{{message}}</p>
-                        {%endfor%}
-                    {%endif%}    
-                {%endwith%}
+                        {% endfor %}
+                    {% endif %}    
+                {% endwith %}
                 <label for="fname">First Name:</label>
                 <input type="text" name="fname" value="{{session['fname']}}">
                 <label for="lname">Last Name:</label>
@@ -39,12 +39,12 @@
             <form action="/login" method="post">
                 {% with messages = get_flashed_messages(category_filter=
                 ['loginError']) %}
-                    {%if messages%}
-                        {%for message in messages%}
+                    {% if messages %}
+                        {% for message in messages %}
                             <p>{{message}}</p>
-                        {%endfor%}
-                    {%endif%}    
-                {%endwith%}
+                        {% endfor %}
+                    {% endif %}    
+                {% endwith %}
                 <label for="email">Email:</label>
                 <input type="email" name="email">
                 <label for="password">Password:</label>
