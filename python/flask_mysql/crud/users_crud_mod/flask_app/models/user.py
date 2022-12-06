@@ -53,8 +53,11 @@ class User:
     def get_emails(cls, data):
         query = "SELECT email FROM users_schema.users WHERE email = %(email)s;"
         results = connectToMySQL('users_schema').query_db(query, data)
-        print(results[0]["email"])
-        return (results[0]["email"])
+        if len(results) > 0:
+            print(results)
+            return results[0]["email"]
+        else: 
+            pass
 
     @staticmethod
     def validate_user(user): 
@@ -68,7 +71,8 @@ class User:
         if not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!")
             is_valid = False
-        if user['email'] in User.get_emails(user):
-            flash("Invalid email address! ")
-            is_valid = False
+        if User.get_emails(user) != None:
+            if user['email'] in User.get_emails(user):
+                flash("Invalid email address! ")
+                is_valid = False
         return is_valid
