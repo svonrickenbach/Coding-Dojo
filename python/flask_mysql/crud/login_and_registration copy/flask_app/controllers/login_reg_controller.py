@@ -8,17 +8,18 @@ dateFormat = "%m/%d/%Y %I:%M %p"
 
 @app.route('/')
 def login_reg():
-    session.clear()
     return render_template("login_reg.html")
 
 @app.route('/register', methods=['POST'])
 def register():
-    data = {
-        "email" : request.form["email"]
-    }
-    user.User.get_emails(data)
+    # validate user input
     if user.User.validate_user(request.form):
+        # session['fname'] = request.form['fname']
+        # session['lname'] = request.form['lname']
+        # session['email'] = request.form['email']
+        print(request.form['password'])
         pw_hash = bcrypt.generate_password_hash(request.form['password'])
+        print(pw_hash)
         data = {
             "fname" : request.form["fname"],
             "lname" : request.form["lname"],
@@ -27,10 +28,11 @@ def register():
         }
         session['user_id'] = user.User.save(data)
         return redirect('/home')
-    session['fname'] = request.form['fname']
-    session['lname'] = request.form['lname']
-    session['email'] = request.form['email']
-    return redirect('/')
+        # if valid save to db
+        # secure the password via bcrypt
+        # store the suer in session
+        # redirect to home
+    return redirect('/home')
 
 @app.route('/login', methods = ['POST'])
 def login(): 

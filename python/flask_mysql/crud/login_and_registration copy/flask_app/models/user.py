@@ -18,7 +18,7 @@ class User:
     def save(cls, data):
         query = "INSERT INTO users (first_name, last_name, email, password, created_at, updated_at) VALUES (%(fname)s, %(lname)s, %(email)s, %(password)s, NOW(), NOW());"
         results = connectToMySQL(mydb).query_db(query, data)
-        # print(results)
+        print(results)
         return results
 
     @classmethod
@@ -41,18 +41,15 @@ class User:
     def getByID(cls, data):
         query = "SELECT * FROM users WHERE id = %(id)s;"
         results = connectToMySQL(mydb).query_db(query, data)
-        # print(results)
+        print(results)
         return cls(results[0]) 
 
-    @classmethod
-    def get_emails(cls, data):
-        query = "SELECT email FROM users WHERE email = %(email)s;"
-        results = connectToMySQL(mydb).query_db(query, data)
-        if len(results) > 0:
-            # print(results)
-            return results[0]["email"]
-        else: 
-            pass
+    # @classmethod
+    # def get_emails(cls, data):
+    #     query = "SELECT email FROM users_schema.users WHERE email = %(email)s;"
+    #     results = connectToMySQL(mydb).query_db(query, data)
+    #     print(results[0]["email"])
+    #     return (results[0]["email"])
 
     @classmethod 
     def get_by_email(cls, data):
@@ -85,10 +82,9 @@ class User:
         elif not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!", 'regError')
             is_valid = False
-        if User.get_emails(user) != None:
-            if user['email'] in User.get_emails(user):
-                flash("Invalid email address! ")
-                is_valid = False
+        # if user['email'] in User.get_emails(user):
+        #     flash("Invalid email address! ")
+        #     is_valid = False
         if len(user['password']) < 1: 
             flash("must enter a password", 'regError')
             is_valid = False 
