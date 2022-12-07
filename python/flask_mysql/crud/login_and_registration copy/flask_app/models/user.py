@@ -44,12 +44,12 @@ class User:
         print(results)
         return cls(results[0]) 
 
-    # @classmethod
-    # def get_emails(cls, data):
-    #     query = "SELECT email FROM users_schema.users WHERE email = %(email)s;"
-    #     results = connectToMySQL(mydb).query_db(query, data)
-    #     print(results[0]["email"])
-    #     return (results[0]["email"])
+    @classmethod
+    def get_emails(cls, data):
+        query = "SELECT email FROM users_schema.users WHERE email = %(email)s;"
+        results = connectToMySQL(mydb).query_db(query, data)
+        print(results[0]["email"])
+        return (results[0]["email"])
 
     @classmethod 
     def get_by_email(cls, data):
