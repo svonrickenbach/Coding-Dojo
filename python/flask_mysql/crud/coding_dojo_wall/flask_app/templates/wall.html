@@ -16,7 +16,7 @@
     </div>
     <div class="body">
         <h3>What's on your mind? Create a new post:</h3>
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(category_filter=['postError']) %}
                     {% if messages %}
                         {% for message in messages %}
                             <p>{{message}}</p>
@@ -37,8 +37,35 @@
                 <p>{{post.content}}</p>
                 {%if current_user.id == post.creator.id%}
                     <a href="/post/delete/{{post.id}}">Delete</a>
-                {%endif%}    
-            {%endfor%}
+                    <a href="/post/edit/{{post.id}}">Edit</a>
+                {%endif%}
+                <p>_____________________________________________________</p>
+                    <div class="comment" name="comment_id">
+                        {%for comment in comments%}
+                            {%if post.id == comment.post.id%}
+                                <p class="creator">{{comment.creator.first_name}} {{comment.created_at.strftime(dtf)}}</p>
+                                <p>{{comment.content}}</p>
+                                {%if current_user.id == comment.creator.id%}
+                    <a href="/comment/delete/{{comment.id}}">Delete</a>
+                {%endif%}
+                            {%endif%}
+                        {%endfor%}
+                        <h6>Post a comment...</h6>
+                        {% with messages = get_flashed_messages(category_filter=['commentError']) %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p>{{message}}</p>
+                                {% endfor %}
+                            {% endif %}    
+                        {% endwith %}
+                        <form action="/comment", method="post">
+                            <textarea name="content" id="text" cols="200" rows="1"></textarea>
+                            <input type="hidden" name="user_id" value="{{current_user.id}}">
+                            <input type="hidden" name="post_id" value="{{post.id}}">
+                            <button>comment</button>
+                            </form>    
+                    </div>
+                {%endfor%}
         </div>
     </div>
 </body>

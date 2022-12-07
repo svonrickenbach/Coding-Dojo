@@ -1,4 +1,4 @@
-from flask_app.controllers import login_reg_controller, user_controller, post_controller
+from flask_app.controllers import login_reg_controller, user_controller, post_controller, comment_controller
 from flask_app import app
 
 if __name__=='__main__':
