@@ -2,6 +2,8 @@ from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash 
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-0._-]+\.[a-zA-Z]+$')
+NAME_REGEX = re.compile(r'^[a-zA-Z]+$')
+PASSWORD_REGEX = re.compile(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
 mydb = 'login_reg_flask'
 
 class User:
@@ -63,11 +65,17 @@ class User:
         elif len(user['fname']) < 3:
             flash('first name must be longer than two characters', 'regError')
             is_valid = False
+        elif not NAME_REGEX.match(user['fname']): 
+            flash("First name cannot contain numbers (unless you're Elon Musks child)!", 'regError')
+            is_valid = False
         if len(user['lname']) < 1:
             flash("must enter a last name", 'regError')
             is_valid = False
         elif len(user['lname']) < 3:
             flash('last name must be longer than two characters', 'regError')
+            is_valid = False
+        elif not NAME_REGEX.match(user['lname']): 
+            flash("Last name cannot contain numbers (unless you're Elon Musks child)!", 'regError')
             is_valid = False
         if len(user['email']) < 1: 
             flash("must enter an email", 'regError')
@@ -83,6 +91,9 @@ class User:
             is_valid = False 
         elif len(user['password']) < 9:
             flash('password must be longer than 8 characters', 'regError')
+            is_valid = False
+        elif not PASSWORD_REGEX.match(user['password']): 
+            flash("Password must contain at least one uppercase letter and a number!", 'regError')
             is_valid = False
         if len(user['passConf']) < 1: 
             flash("please confirm your password", 'regError')
