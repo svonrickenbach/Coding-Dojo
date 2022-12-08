@@ -44,7 +44,7 @@ def edit():
     }
         recipe.Recipe.update(data)
         return redirect('/recipes')
-    return redirect('/recipes/new')
+    return redirect(f"/recipes/edit/{session['recipe_id']}")
 
 @app.route('/recipes/<int:recipe_id>')
 def view_recipe(recipe_id): 
