@@ -1,7 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash 
 from flask_app.models import user
-import re
 mydb = 'recipe_schema'
 
 class Recipe:
