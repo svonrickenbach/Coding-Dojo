@@ -28,7 +28,7 @@
                     <td>{{recipe.name}}</td>
                     <td>{{recipe.creator.first_name}}</td>
                     <td>{{recipe.under}}</td>
-                    <td><a href=''>View Recipe | </a><a href='/recipes/edit/{{recipe.id}}'>Edit | </a> <a href="">Delete</a></td>
+                    <td><a href='/recipes/{{recipe.id}}'>View Recipe  </a> {%if recipe.creator.id == current_user.id%} | <a href='/recipes/edit/{{recipe.id}}'>Edit | </a> <a href="/recipe/delete/{{recipe.id}}">Delete</a> {%endif%}</td>
                 </tr>
             {%endfor%}
             </tbody>

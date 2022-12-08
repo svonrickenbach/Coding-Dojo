@@ -46,11 +46,41 @@ class Recipe:
         return recipes
 
     @classmethod
+    def get_all_recipes_with_creator(cls):
+        query = "SELECT * FROM recipes JOIN users ON recipes.user_id = users.id;"
+        results = connectToMySQL(mydb).query_db(query)
+        # print(results)
+        recipes = []
+        for recipe in results:
+            one_recipe = cls(recipe)
+            one_recipe_author_info = {
+                'id' : recipe['users.id'],
+                'first_name' : recipe['first_name'],
+                'last_name' : recipe['last_name'],
+                'email' : recipe['email'],
+                'password' : recipe['password'],
+                'created_at' : recipe['users.created_at'],
+                'updated_at' : recipe['users.updated_at']
+            }
+            author = user.User(one_recipe_author_info)
+            one_recipe.creator = author
+            recipes.append((one_recipe))
+        return recipes
+
+    @classmethod
     def getByID(cls, data):
         query = "SELECT * FROM recipes WHERE id = %(recipe_id)s;"
         results = connectToMySQL(mydb).query_db(query, data)
         print(results)
         return cls(results[0]) 
+
+    @classmethod
+    def getByID_w_user(cls, data):
+        query = "SELECT recipes.*, users.first_name AS username FROM recipes JOIN users ON recipes.user_id = users.id WHERE recipes.id = %(recipe_id)s;"
+        results = connectToMySQL(mydb).query_db(query, data)
+        print(results)
+        print(results[0]["username"])
+        return results[0]
 
     @classmethod
     def update(cls, data):
@@ -59,14 +89,12 @@ class Recipe:
 
     @classmethod
     def delete(cls, data):
-        query = "DELETE FROM users WHERE id = %(current_id)s;"
+        query = "DELETE FROM recipes WHERE id = %(recipe_id)s;"
         return connectToMySQL(mydb).query_db(query, data)
 
 
-
-
     @staticmethod
-    def validate_user(user): 
+    def validate_recipe(user): 
         is_valid = True
         if len(user['name']) < 1: 
             flash("must enter a name")
