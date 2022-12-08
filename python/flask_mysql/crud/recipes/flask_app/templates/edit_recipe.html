@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/create_recipe.css') }}">
+    <title>Edit Recipe</title>
+</head>
+<body>
+    <h1>Edit Recipe!</h1>
+    <div class="container">
+        <a href="/recipes">Back to recipes</a>
+        <a href="/logout">Log Out</a>
+        <div class="left">
+            {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}    
+                {% endwith %}
+            <form action='/recipes/edit' method="post">
+                <input type="hidden" name="user_id" value="{{current_user.id}}">
+                <label for="name">Name:</label>
+                <input type="text" name="name" value="{{recipes.name}}">
+                <br>
+                <label for="description">Description</label>
+                <textarea name="description" id="" cols="30" rows="5">{{recipes.description}}</textarea>
+                <br>
+                <label for="instructions">Instruction</label>
+                <textarea name="instructions" id="" cols="30" rows="5">{{recipes.description}}</textarea>
+                <br>
+                <label for="date_cooked">Date Cooked/Made:</label>
+                <input type="date" name="date" value="{{recipes.date_cooked.strftime(dtf)}}">
+                <br>
+                <label for="under">Under 30 Minutes?</label>
+                {%if recipes.under == "Yes"%}
+                    <label for='under'>Yes</label>
+                    <input type="radio" name="under" value="Yes" checked>
+                    <label for="under">No</label>
+                    <input type="radio" name='under' value="No">
+                {%endif%}
+                {%if recipes.under == "No"%}
+                    <label for='under'>Yes</label>
+                    <input type="radio" name="under" value="Yes">
+                    <label for="under">No</label>
+                    <input type="radio" name='under' value="No" checked>
+                {%endif%}
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

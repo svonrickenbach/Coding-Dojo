@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/create_recipe.css') }}">
+    <title>New Recipe</title>
+</head>
+<body>
+    <h1>Add a New Recipe!</h1>
+    <a href="/recipes">Home</a>
+    <a href="/logout">Log Out</a>
+    <div class="container">
+            {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}    
+                {% endwith %}
+            <form action='/recipes/new/add' method="post">
+                <input type="hidden" name="user_id" value="{{current_user.id}}">
+                <label for="name">Name:</label>
+                <input type="text" name="name">
+                <br>
+                <label for="description">Description</label>
+                <textarea name="description" id="" cols="30" rows="5"></textarea>
+                <br>
+                <label for="instructions">Instruction</label>
+                <textarea name="instructions" id="" cols="30" rows="5"></textarea>
+                <br>
+                <label for="date_cooked">Date Cooked/Made:</label>
+                <input type="date" name="date">
+                <br>
+                <label for="under">Under 30 Minutes?</label>
+                <label for='under'>Yes</label>
+                <input type="radio" name="under" checked value="Yes">
+                <label for="under">No</label>
+                <input type="radio" name='under' value="No">
+                <input type="submit">
+            </form>
+    </div>
+</body>
+</html>
