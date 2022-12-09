@@ -77,9 +77,9 @@ class Recipe:
     def getByID_w_user(cls, data):
         query = "SELECT recipes.*, users.first_name AS username FROM recipes JOIN users ON recipes.user_id = users.id WHERE recipes.id = %(recipe_id)s;"
         results = connectToMySQL(mydb).query_db(query, data)
-        print(results)
-        print(results[0]["username"])
-        return results[0]
+        this_post = cls(results[0])
+        this_post.creator = results[0]['username']
+        return this_post
 
     @classmethod
     def update(cls, data):

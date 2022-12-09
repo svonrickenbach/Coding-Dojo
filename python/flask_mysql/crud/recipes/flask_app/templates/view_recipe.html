@@ -11,12 +11,12 @@
 <body>
     <h1>Welcome {{current_user.first_name}}!</h1>
     <h2>{{recipes.name}}</h2>
-    <h3>Posted by: {{recipes.username}} </h3>
+    <h3>Posted by: {{recipes.creator}} </h3>
     <div class="info">
         <p>Description: {{recipes.description}}</p>
         <p>Under 30 Minutes?: {{recipes.under}}</p>
         <p>Instructions: {{recipes.instructions}}</p>
-        <p>Date Made:</p>
+        <p>Date Made:{{recipes.date_cooked.strftime(dtf)}}</p>
     </div>
     <a href="/recipes">Back to recipes</a>
     <a href="/logout">Log Out</a>
