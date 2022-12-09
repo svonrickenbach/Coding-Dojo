@@ -21,28 +21,6 @@ class Recipe:
         results = connectToMySQL(mydb).query_db(query, data)
         # print(results)
         return results
-    
-    @classmethod
-    def get_all_recipes_with_creator(cls):
-        query = "SELECT * FROM recipes JOIN users ON recipes.user_id = users.id;"
-        results = connectToMySQL(mydb).query_db(query)
-        # print(results)
-        recipes = []
-        for recipe in results:
-            one_recipe = cls(recipe)
-            one_recipe_author_info = {
-                'id' : recipe['users.id'],
-                'first_name' : recipe['first_name'],
-                'last_name' : recipe['last_name'],
-                'email' : recipe['email'],
-                'password' : recipe['password'],
-                'created_at' : recipe['users.created_at'],
-                'updated_at' : recipe['users.updated_at']
-            }
-            author = user.User(one_recipe_author_info)
-            one_recipe.creator = author
-            recipes.append((one_recipe))
-        return recipes
 
     @classmethod
     def get_all_recipes_with_creator(cls):
