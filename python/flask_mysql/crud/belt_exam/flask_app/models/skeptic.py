@@ -22,7 +22,7 @@ class Skeptic:
     def getByID(cls, data):
         query = "SELECT * FROM skeptics WHERE user_id = %(user_id)s and sighting_id = %(sighting_id)s;"
         results = connectToMySQL(mydb).query_db(query, data)
-        print(results)
+        # print(results)
         if len(results) > 0:
             return cls(results[0]) 
         else: 
@@ -32,7 +32,7 @@ class Skeptic:
     def getBySightingID(cls):
         query = "SELECT * FROM skeptics JOIN sightings ON skeptics.sighting_id = %(sighting)s.id;"
         results = connectToMySQL(mydb).query_db(query)
-        print(results)
+        # print(results)
         return len(results)
 
     @classmethod

@@ -27,7 +27,7 @@ class Sighting:
     def get_all_sightings_with_creator(cls):
         query = "SELECT * FROM sightings JOIN users ON sightings.user_id = users.id;"
         results = connectToMySQL(mydb).query_db(query)
-        print(results)
+        # print(results)
         sightings = []
         for sighting in results:
             one_sighting = cls(sighting)
