@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/report_sighting.css') }}">
+    <title>New Recipe</title>
+</head>
+<body>
+    <div class="header"></div>
+        <h1>Sasquatch Websighting</h1>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Log Out</a>
+    </div>
+    <h2>Report a Sighting</h2>
+    <div class="container">
+            {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}    
+                {% endwith %}
+            <form action='/new/sighting/add' method="post">
+                <input type="hidden" name="user_id" value="{{current_user.id}}">
+                <label for="location">Location:</label>
+                <input type="text" name="location">
+                <br>
+                <label for="what_happened">What Happened:</label>
+                <textarea name="what_happened" id="" cols="30" rows="5"></textarea>
+                <br>
+                <label for="date_of_sighting">Date of Sighting</label>
+                <input type="date" name="date_of_sighting">
+                <br>
+                <label for="number_of_sasquatches">Number of Sasquatches</label>
+                <input type="number" name="number_of_sasquatches">
+                <input type="submit" value="Report">
+            </form>
+    </div>
+</body>
+</html>
+<script src=""></script>
