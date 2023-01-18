@@ -44,6 +44,8 @@ public class TestCafe {
         int maxQuantity = 6;
         appTest.printPriceChart(product, price, maxQuantity);
 
+        // Display Menu Overload Test
+
         ArrayList<Double> prices = new ArrayList<Double>();
         prices.add(1.50);
         prices.add(3.50);

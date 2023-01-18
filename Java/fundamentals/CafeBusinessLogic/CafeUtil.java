@@ -10,6 +10,7 @@ public class CafeUtil {
         return x;
     }
 
+// Generates total price for a given order given as a double[]
     public double getOrderTotal(double[] lineItems) {
         double x = 0;
         for (int i = 0; i < lineItems.length; i++) {
@@ -18,6 +19,7 @@ public class CafeUtil {
         return x;
     }
 
+// Generates a menu using a loop to extract items from ArrayList. The iterater becomes the menu item # and the items in the ArrayList become the menu item names. 
     public void displayMenu(ArrayList<String>menuItems) {
         for (int i = 0; i < menuItems.size(); i++) {
             System.out.print(i + " ");
@@ -25,6 +27,7 @@ public class CafeUtil {
         }
     }
 
+// Allows the user to add customer their and to an ArrayList, and lets the user know how many other orders are in front of theirs. 
     public void addCustomer(ArrayList<String> customers) {
         System.out.println("Please enter your name:");
         String userName = System.console().readLine();
@@ -34,6 +37,7 @@ public class CafeUtil {
         System.out.println(String.format("There are %d people in front of you.", arrLength));
     }
 
+// Prints a price chart for an input price that doubles and subtracts 50 cents for each time the input quantity doubles. 
     public void printPriceChart(String product, double price, int maxQuantity){
         System.out.println(product);
         for (int i = 1; i <= maxQuantity; i++) {
@@ -46,6 +50,7 @@ public class CafeUtil {
         System.out.println("");
     }
 
+// Displays a menu with menu items names and prices. Overloads the previous displayMenu().
     public boolean displayMenu(ArrayList<String> menuItems, ArrayList<Double> prices) {
         if (menuItems.size() != prices.size()) {
             System.out.print("False!");
