@@ -12,7 +12,9 @@ public class AlfredQuotes {
         return guestGreeting;
     }
 
-    public String guestGreeting(String name, String dayPeriod) {
+    public String guestGreeting(String name) {
+        Date date = new Date();
+        SimpleDateFormat Datefor = new SimpleDateFormat("k, a")
         String guestGreeting = String.format("Good %s, %s. Lovely to see you.", dayPeriod, name);
         return guestGreeting;
     }
