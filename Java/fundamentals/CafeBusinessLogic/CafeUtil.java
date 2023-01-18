@@ -44,4 +44,11 @@ public class CafeUtil {
             System.out.println(i + " - " + "$" + newprice);
         }
     }
+
+    public boolean displayMenu(ArrayList<String> menuItems, ArrayList<Double> prices) {
+        for (int i = 0; i < menuItems.size(); i++) {
+            System.out.println(i + " " + menuItems.get(i) + " -- " + prices.get(i));
+        }
+        return true;
+    }
 }

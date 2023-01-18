@@ -43,5 +43,12 @@ public class TestCafe {
         double price = 2.00;
         int maxQuantity = 6;
         appTest.printPriceChart(product, price, maxQuantity);
+
+        ArrayList<Double> prices = new ArrayList<Double>();
+        prices.add(1.50);
+        prices.add(3.50);
+        prices.add(4.50);
+        prices.add(3.50);
+        appTest.displayMenu(menu, prices);
     }
 }
