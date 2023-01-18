@@ -43,12 +43,20 @@ public class CafeUtil {
                 }
             System.out.println(i + " - " + "$" + newprice);
         }
+        System.out.println("");
     }
 
     public boolean displayMenu(ArrayList<String> menuItems, ArrayList<Double> prices) {
-        for (int i = 0; i < menuItems.size(); i++) {
-            System.out.println(i + " " + menuItems.get(i) + " -- " + prices.get(i));
+        if (menuItems.size() != prices.size()) {
+            System.out.print("False!");
+            return false;
         }
+        else{
+            for (int i = 0; i < menuItems.size(); i++) {
+                System.out.println(i + " " + menuItems.get(i) + " -- " + prices.get(i));
+            }
+        }
+        System.out.println("");
         return true;
     }
 }
