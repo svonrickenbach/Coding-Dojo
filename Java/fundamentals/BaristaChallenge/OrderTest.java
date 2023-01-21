@@ -21,11 +21,37 @@ public class OrderTest {
         // Test 3
         Item item1 = new Item("Drip Coffee", 1.50);
         Item item2 = new Item("Latte", 4.00);
+        Item item3 = new Item("Mocha", 4.50);
 
         order3.addItem(item1);
         order3.addItem(item2);
+        order3.addItem(item3);
 
-        order3.display();
+        order4.addItem(item2);
+        order4.addItem(item3);
+
+        order5.addItem(item1);
+        order5.addItem(item2);
+
+        order1.addItem(item1);
+        order1.addItem(item2);
+
+        order2.addItem(item2);
+        order2.addItem(item3);
+
+        // order3.display();
+        // order4.display();
+        // order5.display();
+        // order1.display();
+        // order2.display();
+
+        // Test 4
+        order3.setIsReady(true);
+        System.out.println(order3.getStatusMessage());
+
+        // Test 5
+        System.out.println(order3.getOrderTotal());
+
 
 
 

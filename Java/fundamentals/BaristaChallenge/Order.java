@@ -6,13 +6,13 @@ public class Order {
     private ArrayList<Item> items;
 
     public Order() { 
-        name = "Guest";
-        ArrayList<Item> items = new ArrayList<Item>(); 
+        this.name = "Guest";
+        this.items = new ArrayList<Item>(); 
     }
 
     public Order(String name) { 
         this.name = name;
-        ArrayList<Item> items = new ArrayList<Item>(); 
+        this.items = new ArrayList<Item>(); 
     }
 
     public void setName(String name) {
@@ -39,7 +39,7 @@ public class Order {
         items.add(item);
     }
 
-    public String getStatusMessage(boolean ready) {
+    public String getStatusMessage() {
         if (ready) {
             return "Your order is ready.";
         }
@@ -50,7 +50,7 @@ public class Order {
 
     public double getOrderTotal() {
         double total = 0;
-        for (int i = 0; i <= getItems().size(); i++ ) {
+        for (int i = 0; i < getItems().size(); i++ ) {
             total = total + getItems().get(i).getPrice();
         }
         return total;
@@ -62,7 +62,8 @@ public class Order {
         for (int i = 0; i < getItems().size(); i++) {
             String itemName = getItems().get(i).getName();
             double itemPrice = getItems().get(i).getPrice(); 
-            System.out.println(String.format("%s - $%f", itemName, itemPrice));
+            System.out.println(String.format("%s - $%.2f", itemName, itemPrice));
         }
+        System.out.println(String.format("Total: $%.2f" ,getOrderTotal())+ "\n");
     }   
 }
