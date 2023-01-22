@@ -17,12 +17,12 @@ public class TestBankAccount {
         // System.out.println("Total Money: " + BankAccount.totalMoney);
 
         account1.displayAccountTotals();
-        BankAccount.displayBankTotalInfo();
+        account2.displayAccountTotals();
+        // BankAccount.displayBankTotalInfo();
 
         // Why does this print a % sign after number?
-        System.out.print(account1.getSavingsBalance());
+        // System.out.print(account1.getSavingsBalance());
 
-        
 
     }
 }

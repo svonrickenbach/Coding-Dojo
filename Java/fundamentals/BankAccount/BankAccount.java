@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class BankAccount { 
     private double checkingBalance;
     private double savingsBalance;
@@ -8,6 +10,7 @@ public class BankAccount {
     public BankAccount(double checkingBalance, double savingsBalance) {
         this.checkingBalance = checkingBalance;
         this.savingsBalance = savingsBalance;
+        this.accountNumber = accountNumber();
         numOfAccounts++; 
         totalMoney = totalMoney + checkingBalance + savingsBalance;
     }
@@ -52,6 +55,7 @@ public class BankAccount {
     }
 
     public void displayAccountTotals() {
+        System.out.println(String.format("Account #: %s", accountNumber));
         System.out.println(String.format("Savings Balance: $%.2f", savingsBalance));
         System.out.println(String.format("Checking Balance: $%.2f", checkingBalance));
         double totalUserBalance = savingsBalance + checkingBalance;
@@ -61,6 +65,15 @@ public class BankAccount {
     public static void displayBankTotalInfo() {
         System.out.println(String.format("Banks Total Balance: $%.2f", totalMoney));
         System.out.println(String.format("Total number of accounts: %d", numOfAccounts));
+    }
+
+    private String accountNumber() { 
+        Random randMachine = new Random();
+        String accountNumber = "";
+        for (int i = 0; i < 10; i++) {
+            accountNumber = accountNumber + randMachine.nextInt(9);
+        }
+        return accountNumber;
     }
 }
 
