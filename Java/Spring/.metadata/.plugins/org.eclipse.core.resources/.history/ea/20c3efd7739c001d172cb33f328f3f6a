@@ -1,0 +1,13 @@
+
+public class Driver extends Car {
+
+	public Driver() {
+		super();
+	}
+	
+	public void driving() {
+		setGasLevel();
+		System.out.println(getGasLevel());
+	}
+
+}

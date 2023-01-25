@@ -1,0 +1,37 @@
+
+public class Driver extends Car {
+
+	public Driver() {
+		super();
+	}
+	
+	public void driving() {
+		System.out.println("You drive the car.");
+		setGasLevel(-1);
+		System.out.println("Gas remaining: " + getGasLevel() + "/10");
+	}
+	
+	public void booster() {
+		if(getGasLevel() < 3) {
+			System.out.println("You do not have enough gas to boost");
+		}
+		else {
+			System.out.println("You used the booster.");
+			setGasLevel(-3);
+			System.out.println("Gas remaining: " + getGasLevel() + "/10");
+		}
+	}
+	
+	public void refuel() {
+		if(getGasLevel() > 8) {
+			System.out.println("You don't have enough room in the tank to refill!");
+		}
+		else {
+		setGasLevel(2);
+		System.out.println("You refueld.");
+		System.out.println("Gas remaining: " + getGasLevel() + "/10");
+		}
+	}
+}
+
+

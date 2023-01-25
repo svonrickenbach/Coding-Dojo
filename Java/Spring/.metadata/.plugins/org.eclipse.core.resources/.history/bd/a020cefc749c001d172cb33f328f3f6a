@@ -1,0 +1,14 @@
+
+public class Car {
+	
+	public int gas = 10;
+		
+	public int getGasLevel() {
+		return this.gas;
+	}
+	
+	public void setGasLevel() {
+		this.gas = this.gas - 1; 
+	}
+}
+

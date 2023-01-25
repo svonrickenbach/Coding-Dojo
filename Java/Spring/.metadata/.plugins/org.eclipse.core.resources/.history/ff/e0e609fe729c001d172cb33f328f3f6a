@@ -1,0 +1,8 @@
+
+public class Driver extends Car {
+
+	public void driving() {
+		this.gas;
+	}
+
+}
