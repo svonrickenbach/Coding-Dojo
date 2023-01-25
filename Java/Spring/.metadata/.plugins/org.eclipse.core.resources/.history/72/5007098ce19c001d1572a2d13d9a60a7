@@ -1,0 +1,6 @@
+
+public class GiantBat extends Mammal {
+	private int energy = 300;
+	
+	public 
+}

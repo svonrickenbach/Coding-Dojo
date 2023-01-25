@@ -1,7 +1,15 @@
 
 public class Mammal {
 	private int energy = 100;
+	
+	public Mammal() {
+		
+	}
 
+	public Mammal(int energy) {
+		this.energy = energy;
+	}
+	
 	public int getEnergy() {
 		return energy;
 	}

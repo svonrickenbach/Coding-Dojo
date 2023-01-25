@@ -1,0 +1,27 @@
+
+public class ZooTest2 {
+
+	public static void main(String[] args) {
+//		Mammal mammal1 = new Mammal();
+//		mammal1.displayEnergy();
+		
+//		Gorilla gorilla1 = new Gorilla();
+//		gorilla1.displayEnergy();
+//		
+//		gorilla1.throwThings();
+//		gorilla1.throwThings();
+//		gorilla1.throwThings();
+//		gorilla1.eatBananas();
+//		gorilla1.eatBananas();
+//		gorilla1.climb();
+//		gorilla1.displayEnergy();
+		
+		GiantBat bat1 = new GiantBat();
+		
+		bat1.displayEnergy();
+		bat1.flying();
+		bat1.displayEnergy();
+		
+	}
+
+}
