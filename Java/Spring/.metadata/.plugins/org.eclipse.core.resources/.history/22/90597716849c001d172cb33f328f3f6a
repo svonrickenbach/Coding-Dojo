@@ -1,0 +1,6 @@
+
+public class Gorilla {
+	public Gorilla() {
+		super();
+	}
+}

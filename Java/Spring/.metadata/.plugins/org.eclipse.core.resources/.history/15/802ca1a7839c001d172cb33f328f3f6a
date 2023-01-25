@@ -1,0 +1,9 @@
+
+public class ZooTest {
+
+	public static void main(String[] args) {
+		Mammal mammal1 = new Mammal();
+		mammal1.getEnergy();
+	}
+
+}

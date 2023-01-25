@@ -1,0 +1,10 @@
+
+public class Gorilla extends Mammal{
+	public Gorilla() {
+		super();
+	}
+	
+	public void throwThings() {
+		setEnergy(-5);
+	}
+}
