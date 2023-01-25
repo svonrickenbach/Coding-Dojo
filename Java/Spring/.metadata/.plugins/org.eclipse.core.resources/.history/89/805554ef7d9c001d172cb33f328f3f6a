@@ -28,6 +28,7 @@ public class TestCarAndDriver {
 		driver1.refuel();
 		driver1.driving();
 		driver1.refuel();
+		driver1.refuel();
 		driver1.booster();
 		driver1.booster();
 		driver1.booster();
