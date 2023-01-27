@@ -33,7 +33,7 @@ public class AdminUser extends User implements HIPAACompliantUser, HIPAAComplian
 
 	@Override
 	public boolean accessAuthorized(Integer confirmedAuthID) {
-		if(getId() == confirmedAuthID) {
+		if(this.id == confirmedAuthID) {
 			return true;
 		}
 		else {
