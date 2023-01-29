@@ -8,12 +8,12 @@
 		<version>2.7.8</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.helloworld</groupId>
-	<artifactId>helloworld</artifactId>
+	<groupId>com.codingdojo.test</groupId>
+	<artifactId>test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>helloworld</name>
-	<description>First project in Spring Boot</description>
+	<name>test</name>
+	<description>test</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -39,10 +39,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-                <groupId>org.apache.tomcat.embed</groupId>
-                <artifactId>tomcat-embed-jasper</artifactId>
-        </dependency>
 	</dependencies>
 
 	<build>
