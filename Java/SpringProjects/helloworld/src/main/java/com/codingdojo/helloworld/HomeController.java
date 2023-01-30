@@ -1,18 +1,19 @@
 package com.codingdojo.helloworld;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController 
 @RequestMapping("/hello")
 public class HomeController {
 	
-	@RequestMapping("")
+	@GetMapping("")
 	public String index() {
 		return "Hello World!";
 	}
 	
-	@RequestMapping("/new_route")
+	@GetMapping("/new_route")
 	public String Woo() {
 		return "WOOOOOOOOOOOO!!!!!!!";
 	}
