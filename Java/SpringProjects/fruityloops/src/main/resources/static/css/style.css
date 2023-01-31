@@ -19,4 +19,5 @@ h1 {
 
 .table {
 	border: 10px solid red;
+	border-color: pink;
 }
