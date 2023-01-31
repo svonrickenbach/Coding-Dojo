@@ -8,12 +8,12 @@
 		<version>2.7.8</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.counter</groupId>
-	<artifactId>counter</artifactId>
+	<groupId>com.codingdojo.omikujiform</groupId>
+	<artifactId>omikujiform</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>counter</name>
-	<description>Count page visits with session</description>
+	<name>omikujiform</name>
+	<description>Create custom Omikuji fortunes</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
