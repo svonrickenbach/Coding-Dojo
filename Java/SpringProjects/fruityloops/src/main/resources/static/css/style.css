@@ -13,11 +13,14 @@
 	}
 
 h1 {
-	color: rbg(244, 185, 194);
-	color: pink;
+	color: rgb(244, 185, 194);
 }
 
 .table {
-	border: 10px solid red;
+	border: 10px solid #000000;
+}
+
+#table{
 	border-color: pink;
 }
+

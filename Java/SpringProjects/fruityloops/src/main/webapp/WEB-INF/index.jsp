@@ -14,7 +14,7 @@
 </head>
 <body>
 	<h1>Fruit Store</h1>
-	<table class="table">
+	<table id="table" class="table">
   		<tr>
     		<th>Name</th>
     		<th>Price</th> 
