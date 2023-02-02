@@ -12,7 +12,7 @@ import com.codingdojo.mvc.repositories.BookRepository;
 public class BookService {
 	private final BookRepository bookRepository;
 	
-	public BookService(BookRepository, bookRepository) {
+	public BookService(BookRepository bookRepository) {
 		this.bookRepository = bookRepository;
 	}
 	
@@ -33,5 +33,16 @@ public class BookService {
         else {
             return null;
         }	
+    }
+    // updates a book
+    public Book updateBook(Book book) {
+    	return bookRepository.save(book);
+    }
+    // delete a book
+    public void deleteBook(Long id) {
+    	Optional<Book> optionalBook = bookRepository.findById(id);
+    	if(optionalBook.isPresent()) {
+    		bookRepository.deleteById(id);
+    	}
     }
 }
