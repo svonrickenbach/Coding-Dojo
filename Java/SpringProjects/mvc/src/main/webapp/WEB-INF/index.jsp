@@ -7,16 +7,28 @@
 <head>
 <meta charset="UTF-8">
 <title>Books</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/app.js"></script>
+	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
 <body>
-
-	<h1><c:out value="${book.title}"/></h1>
-	
-	<h2>Description: <c:out value="${book.description}"/></h2>
-	
-	<h2>Language: <c:out value="${book.language}"/></h2>
-	
-	<h2>Number of Pages: <c:out value="${book.numberOfPages}"/></h2>
+	<h1>All Books</h1>
+	<table id="table" class="table">
+  		<tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Language</th>
+            <th>Number of Pages</th>
+ 		</tr>
+  		<c:forEach var="books" items="${books}">
+  			<tr>
+    			<td><c:out value="${books.id}"></c:out></td>
+    			<td><a href="/books/<c:out value="${books.id}"></c:out>"><c:out value="${books.title}"></c:out></a></td>
+    			<td><c:out value="${books.language}"></c:out></td>
+    			<td><c:out value="${books.numberOfPages}"></c:out></td>
+    		</tr>
+    	</c:forEach>
+	</table>
 
 </body>
 </html>
