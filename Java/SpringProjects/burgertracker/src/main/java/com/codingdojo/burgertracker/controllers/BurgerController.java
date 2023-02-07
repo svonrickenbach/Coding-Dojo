@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import com.codingdojo.burgertracker.models.Burger;
 import com.codingdojo.burgertracker.services.BurgerService;
@@ -62,7 +61,7 @@ public class BurgerController {
         return "redirect:/";
     }
     
-    @RequestMapping("/burger/{id}/edit")
+    @GetMapping("/burger/{id}/edit")
     public String edit(@PathVariable("id") Long id, Model model) {
         Burger burger = burgerService.findBurger(id);
         model.addAttribute("burger", burger);

@@ -19,6 +19,7 @@
             <th>Title</th>
             <th>Language</th>
             <th>Number of Pages</th>
+            <th>Action</th>
  		</tr>
   		<c:forEach var="books" items="${books}">
   			<tr>
@@ -26,6 +27,11 @@
     			<td><a href="/books/<c:out value="${books.id}"></c:out>"><c:out value="${books.title}"></c:out></a></td>
     			<td><c:out value="${books.language}"></c:out></td>
     			<td><c:out value="${books.numberOfPages}"></c:out></td>
+    			<td><form action="/books/<c:out value="${books.id}"/>" method="post">
+   						<input type="hidden" name="_method" value="delete">
+    					<button>Delete</button>
+					</form>
+				</td>
     		</tr>
     	</c:forEach>
 	</table>
