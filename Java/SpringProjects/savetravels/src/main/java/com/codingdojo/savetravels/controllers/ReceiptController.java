@@ -59,9 +59,11 @@ public class ReceiptController {
     @PostMapping("/receipt/create")
     public String create(
         @Valid @ModelAttribute("receipt") Receipt receipt,
-        BindingResult result)
+        BindingResult result, Model model)
     {
     	if (result.hasErrors()) {
+    		List<Receipt> receipts = receiptService.allReceipts();
+    	    model.addAttribute("receipts", receipts);
     		return "index.jsp";
     	}
         // CODE TO MAKE A NEW RECEIPT AND SAVE TO THE DB

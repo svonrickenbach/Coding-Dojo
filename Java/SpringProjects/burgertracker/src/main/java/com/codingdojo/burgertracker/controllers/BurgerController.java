@@ -51,9 +51,11 @@ public class BurgerController {
     @PostMapping("/burgers")
     public String create(
         @Valid @ModelAttribute("burger") Burger burger,
-        BindingResult result)
+        BindingResult result, Model model)
     {
     	if (result.hasErrors()) {
+    		List<Burger> burgers = burgerService.allBurgers();
+    	    model.addAttribute("burgers", burgers);
     		return "index.jsp";
     	}
         // CODE TO MAKE A NEW BOOK AND SAVE TO THE DB
