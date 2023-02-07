@@ -1,6 +1,5 @@
 package com.codingdojo.burgertracker.controllers;
 
-import java.awt.print.Book;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -52,7 +51,7 @@ public class BurgerController {
         BindingResult result)
     {
     	if (result.hasErrors()) {
-    		return "redirect:/";
+    		return "index.jsp";
     	}
         // CODE TO MAKE A NEW BOOK AND SAVE TO THE DB
         burgerService.createBurger(burger);

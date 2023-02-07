@@ -20,6 +20,7 @@
 	
 	<a href="/books">All Books</a>
 	<a href="/books/new">Add a New Book</a>
+	<a href="/books/${book.id}/edit">Edit Book</a>
 
 </body>
 </html>
