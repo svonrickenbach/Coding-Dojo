@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -68,7 +69,7 @@ public class BurgerController {
         return "edit.jsp";
     }
     
-    @RequestMapping(value="/burger/{id}", method=RequestMethod.PUT)
+    @PutMapping(value="/burger/{id}")
     public String update(@Valid @ModelAttribute("burger") Burger burger, BindingResult result) {
         if (result.hasErrors()) {
             return "edit.jsp";
