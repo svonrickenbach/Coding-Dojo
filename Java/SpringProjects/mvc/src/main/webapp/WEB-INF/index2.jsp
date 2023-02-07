@@ -17,6 +17,9 @@
 	<h2>Language: <c:out value="${book.language}"/></h2>
 	
 	<h2>Number of Pages: <c:out value="${book.numberOfPages}"/></h2>
+	
+	<a href="/books">All Books</a>
+	<a href="/books/new">Add a New Book</a>
 
 </body>
 </html>

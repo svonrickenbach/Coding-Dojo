@@ -1,4 +1,4 @@
-package com.codingdojo.mvc.models;
+package com.codingdojo.burgertracker.models;
 
 import java.util.Date;
 
@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,23 +18,21 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="books")
-public class Book {
+@Table(name="burgers")
+public class Burger {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
-    @Size(min = 5, max = 200)
-    private String title;
-    @NotNull
-    @Size(min = 5, max = 200)
-    private String description;
-    @NotNull
-    @Size(min = 3, max = 40)
-    private String language;
+    @NotNull(message= "You must enter a burger name!")
+    @Size(min = 5, max = 200, message = "You must enter a burger rname between 5 and 200 characters!")
+    private String burgerName;
+    @NotNull(message= "You must enter a restaurant name!")
+    @Size(min = 5, max = 200, message = "You must enter a restaurant name between 5 and 200 characters!")
+    private String restaurantName;
     @NotNull(message="Must not be blank")
-    @Min(value=100, message="must be at least 100 pages")
-    private Integer numberOfPages;
+    @Min(value=1, message="rating must be between 1 and 5")
+    @Max(value=5, message="rating must be between 1 and 5")
+    private Integer rating;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -41,13 +40,12 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    public Book() {
+    public Burger() {
     }
-    public Book(String title, String desc, String lang, int pages) {
-        this.title = title;
-        this.description = desc;
-        this.language = lang;
-        this.numberOfPages = pages;
+    public Burger(String burgerName, String restaurantName, int rating) {
+        this.burgerName = burgerName;
+        this.restaurantName = restaurantName;
+        this.rating = rating;
     }
     
 	public Long getId() {
@@ -56,29 +54,23 @@ public class Book {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getTitle() {
-		return title;
+	public String getBurgerName() {
+		return burgerName;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBurgerName(String burgerName) {
+		this.burgerName = burgerName;
 	}
-	public String getDescription() {
-		return description;
+	public String getRestaurantName() {
+		return restaurantName;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setRestaurantName(String restaurantName) {
+		this.restaurantName = restaurantName;
 	}
-	public String getLanguage() {
-		return language;
+	public Integer getRating() {
+		return rating;
 	}
-	public void setLanguage(String language) {
-		this.language = language;
-	}
-	public Integer getNumberOfPages() {
-		return numberOfPages;
-	}
-	public void setNumberOfPages(Integer numberOfPages) {
-		this.numberOfPages = numberOfPages;
+	public void setRating(Integer rating) {
+		this.rating = rating;
 	}
 	public Date getCreatedAt() {
 		return createdAt;

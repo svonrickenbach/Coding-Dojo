@@ -30,5 +30,7 @@
     	</c:forEach>
 	</table>
 
+	<a href="/books/new">Add a New Book</a>
+
 </body>
 </html>

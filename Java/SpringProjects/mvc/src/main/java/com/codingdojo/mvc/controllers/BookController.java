@@ -3,11 +3,16 @@ package com.codingdojo.mvc.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codingdojo.mvc.models.Book;
 import com.codingdojo.mvc.services.BookService;
@@ -38,6 +43,24 @@ public class BookController {
         List<Book> books = bookService.allBooks();
         model.addAttribute("books", books);
         return "index.jsp";
+    }
+    
+    @GetMapping("books/new")
+    public String newBook(@ModelAttribute("book") Book book) {
+    	return "create.jsp";
+    }
+    
+    @PostMapping("/books")
+    public String create(
+        @Valid @ModelAttribute("book") Book book,
+        BindingResult result)
+    {
+    	if (result.hasErrors()) {
+    		return "create.jsp";
+    	}
+        // CODE TO MAKE A NEW BOOK AND SAVE TO THE DB
+        bookService.createBook(book);
+        return "redirect:/books";
     }
 	
 }
