@@ -24,7 +24,7 @@ public class Burger {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull(message= "You must enter a burger name!")
-    @Size(min = 5, max = 200, message = "You must enter a burger rname between 5 and 200 characters!")
+    @Size(min = 5, max = 200, message = "You must enter a burger name between 5 and 200 characters!")
     private String burgerName;
     @NotNull(message= "You must enter a restaurant name!")
     @Size(min = 5, max = 200, message = "You must enter a restaurant name between 5 and 200 characters!")
