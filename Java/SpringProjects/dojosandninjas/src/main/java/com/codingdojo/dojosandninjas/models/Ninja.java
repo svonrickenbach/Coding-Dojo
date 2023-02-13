@@ -1,4 +1,4 @@
-package com.codingdojo.relationships.models;
+package com.codingdojo.dojosandninjas.models;
 
 import java.util.Date;
 
@@ -9,75 +9,87 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="licenses")
-public class License {
-    
+@Table(name="ninjas")
+public class Ninja {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String number;
-    private String expirationDate;
-    private String state;
+    private String firstName;
+    private String lastName;
+    private int age;
     @Column(updatable=false)
     private Date createdAt;
     private Date updatedAt;
-    @OneToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="person_id")
-    private Person person;
-    public License() {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="dojo_id")
+    private Dojo dojo;
+    
+    public Ninja() {
         
     }
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getNumber() {
-		return number;
-	}
-	public void setNumber(String number) {
-		this.number = number;
-	}
-	 public void setExpirationDate(String expirationDate) {
-	        this.expirationDate = expirationDate;
-	    }
 
-	 public String getExpirationDate() {
-	        return this.expirationDate;
-	    }
-	public String getState() {
-		return state;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setState(String state) {
-		this.state = state;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
+
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	public Person getPerson() {
-		return person;
+
+	public Dojo getDojo() {
+		return dojo;
 	}
-	public void setPerson(Person person) {
-		this.person = person;
+
+	public void setDojo(Dojo dojo) {
+		this.dojo = dojo;
 	}
-    
+	
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
@@ -86,4 +98,8 @@ public class License {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+    
 }
+    
+
+

@@ -46,8 +46,8 @@ public class ReceiptController {
 	
     @GetMapping("/")
     public String index(Model model, @ModelAttribute("receipt") Receipt receipt) {
-        List<Receipt> receipts = receiptService.allReceipts();
-        model.addAttribute("receipts", receipts);
+//      List<Receipt> receipts = receiptService.allReceipts();
+        model.addAttribute("receipts", receiptService.allReceipts());
         return "index.jsp";
     }
     

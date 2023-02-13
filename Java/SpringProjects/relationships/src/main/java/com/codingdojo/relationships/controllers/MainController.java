@@ -1,6 +1,5 @@
 package com.codingdojo.relationships.controllers;
 
-import java.util.List;
 
 import javax.validation.Valid;
 
@@ -15,8 +14,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
+import com.codingdojo.relationships.models.License;
 import com.codingdojo.relationships.models.Person;
+import com.codingdojo.relationships.services.LicenseService;
 import com.codingdojo.relationships.services.PersonService;
+
 
 
 
@@ -25,6 +27,8 @@ public class MainController {
 	
 	@Autowired
 	PersonService personService;
+	@Autowired 
+	LicenseService licenseService;
 
 	@GetMapping("/persons/{person_id}")
 	public String showPerson(@PathVariable Long person_id, Model model) {
@@ -37,10 +41,36 @@ public class MainController {
 	
 	
     @GetMapping("/")
-    public String index(Model model, @ModelAttribute("receipt") Person person) {
-        List<Person> people = personService.allPersons();
-        model.addAttribute("people", people);
-        return "index.jsp";
+    public String index(@ModelAttribute("person") Person person) {
+        return "createPerson.jsp";
+    }
+    
+    @GetMapping("/license")
+    public String index(@ModelAttribute("license") License license, Model model) {
+		model.addAttribute("persons", personService.allPersons());
+        return "createLicense.jsp";
+    }
+    
+    @PostMapping("/license/create/{person_id}")
+    public String createLicense(
+    	@Valid @ModelAttribute("license") License license,
+    	BindingResult result, Model model) {
+    	if(result.hasErrors()) {
+    	    model.addAttribute("persons", personService.allPersons());
+    		return "createLicense.jsp";
+    	}
+//    	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//    	try {
+//			Date expirationDate = dateFormat.parse(expirationDateString);
+//			System.out.println(expirationDate);
+//	    	license.setExpirationDate(expirationDate);
+//		} catch (ParseException e) {
+//			System.out.println("hello");
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+    	licenseService.createLicense(license);
+    	return "redirect:/";
     }
     
     @PostMapping("/person/create")
@@ -49,8 +79,6 @@ public class MainController {
         BindingResult result, Model model)
     {
     	if (result.hasErrors()) {
-    		List<Person> people = personService.allPersons();
-    	    model.addAttribute("people", people);
     		return "index.jsp";
     	}
         // CODE TO MAKE A NEW RECEIPT AND SAVE TO THE DB
