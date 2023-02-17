@@ -51,7 +51,7 @@ public class MainController {
         return "createLicense.jsp";
     }
     
-    @PostMapping("/license/create/{person_id}")
+    @PostMapping("/license/create")
     public String createLicense(
     	@Valid @ModelAttribute("license") License license,
     	BindingResult result, Model model) {

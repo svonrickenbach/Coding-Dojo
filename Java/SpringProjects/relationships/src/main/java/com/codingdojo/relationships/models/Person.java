@@ -80,7 +80,6 @@ public class Person {
 	public void setLicense(License license) {
 		this.license = license;
 	}
-	
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();

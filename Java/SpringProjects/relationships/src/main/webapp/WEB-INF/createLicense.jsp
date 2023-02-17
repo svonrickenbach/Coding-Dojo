@@ -31,8 +31,9 @@
     			<form:input type="text" path="state" class="form-control"/>
   		</div>
   		<div class="form-group">
-        		<label for="expirationDate">Expiration Date:</label>
-    			<input type="text" name="expirationDate" class="form-control"/>
+        		<form:label path="expirationDate">Expiration Date:</form:label>
+        		<form:errors path="expirationDate"/>
+    			<form:input type="date" name="expirationDate" class="form-control"/>
   		</div>
   		<button type="submit" class="btn btn-default">Submit</button>
 	</form:form>
