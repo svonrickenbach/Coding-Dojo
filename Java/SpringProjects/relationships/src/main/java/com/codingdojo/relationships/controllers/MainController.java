@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.relationships.models.License;
 import com.codingdojo.relationships.models.Person;
@@ -52,25 +53,15 @@ public class MainController {
     }
     
     @PostMapping("/license/create")
-    public String createLicense(
-    	@Valid @ModelAttribute("license") License license,
-    	BindingResult result, Model model) {
-    	if(result.hasErrors()) {
-    	    model.addAttribute("persons", personService.allPersons());
-    		return "createLicense.jsp";
-    	}
-//    	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//    	try {
-//			Date expirationDate = dateFormat.parse(expirationDateString);
-//			System.out.println(expirationDate);
-//	    	license.setExpirationDate(expirationDate);
-//		} catch (ParseException e) {
-//			System.out.println("hello");
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-    	licenseService.createLicense(license);
-    	return "redirect:/";
+    public String create(@Valid @ModelAttribute("license") License license, BindingResult result, 
+                         @RequestParam(value="expirationDate") String expirationDate) {
+        if (result.hasErrors()) {
+            return "createLicense.jsp";
+        } else {
+            license.setExpirationDateAsString(expirationDate);
+            licenseService.createLicense(license);
+            return "redirect:/";
+        }
     }
     
     @PostMapping("/person/create")

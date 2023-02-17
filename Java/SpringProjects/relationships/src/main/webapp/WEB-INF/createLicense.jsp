@@ -33,7 +33,7 @@
   		<div class="form-group">
         		<form:label path="expirationDate">Expiration Date:</form:label>
         		<form:errors path="expirationDate"/>
-    			<form:input type="date" name="expirationDate" class="form-control"/>
+    			<form:input type="date" path="expirationDate" name="expirationDate" class="form-control"/>
   		</div>
   		<button type="submit" class="btn btn-default">Submit</button>
 	</form:form>
