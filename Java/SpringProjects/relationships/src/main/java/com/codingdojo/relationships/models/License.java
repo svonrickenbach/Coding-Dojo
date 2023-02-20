@@ -1,6 +1,5 @@
 package com.codingdojo.relationships.models;
 
-import java.beans.PropertyEditorSupport;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,6 +27,7 @@ public class License {
 	@Size(min = 2, max = 2)
 	private String state;
 	
+	@NotBlank(message = "You must enter a date!")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date expirationDate;
 	
@@ -93,13 +94,13 @@ public class License {
 		}
 	}
 	
-	static {
-		java.beans.PropertyEditorManager.registerEditor(Date.class, DateEditor.class);
-	}
-	
-	public class DateEditor extends PropertyEditorSupport {
-	    public void setAsText(final String text) throws IllegalArgumentException {
-	        SimpleDateFormat sdf = new SimpleDateFormat();
-	    }
-	}
+//	static {
+//		java.beans.PropertyEditorManager.registerEditor(Date.class, DateEditor.class);
+//	}
+//	
+//	public class DateEditor extends PropertyEditorSupport {
+//	    public void setAsText(final String text) throws IllegalArgumentException {
+//	        SimpleDateFormat sdf = new SimpleDateFormat();
+//	    }
+//	}
 }

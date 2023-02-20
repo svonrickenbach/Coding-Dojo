@@ -54,8 +54,9 @@ public class MainController {
     
     @PostMapping("/license/create")
     public String create(@Valid @ModelAttribute("license") License license, BindingResult result, 
-                         @RequestParam(value="expirationDate") String expirationDate) {
+                         @RequestParam(value="expirationDate") String expirationDate, Model model) {
         if (result.hasErrors()) {
+        	model.addAttribute("persons", personService.allPersons());
             return "createLicense.jsp";
         } else {
             license.setExpirationDateAsString(expirationDate);

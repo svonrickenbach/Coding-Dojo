@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,20 +23,15 @@ public class HomeController {
 
     
     @GetMapping("/")
-    public String index(
-    		@ModelAttribute("newUser") User user,
-    		@ModelAttribute("newLogin") LoginUser loginUser,
-    		Model model) {
+    public String index(Model model) {
     
-        // Bind empty User and LoginUser objects to the JSP
-        // to capture the form input
         model.addAttribute("newUser", new User());
         model.addAttribute("newLogin", new LoginUser());
         return "loginAndReg.jsp";
     }
     
     @PostMapping("/register")
-    public String register(@Validated(User.class) @ModelAttribute("newUser") User newUser, 
+    public String register(@Valid @ModelAttribute("newUser") User newUser, 
             BindingResult result, Model model, HttpSession session) {
         
     	User u = userServ.register(newUser, result);
@@ -47,16 +41,6 @@ public class HomeController {
              return "loginAndReg.jsp";
          }
     	
-//    	userServ.register(newUser, result);
-//    	
-//    	if(result.hasErrors()) {
-//            model.addAttribute("newLogin", new LoginUser());
-//            return "loginAndReg.jsp";
-//        }
-        
-        // No errors! 
-        // TO-DO Later: Store their ID from the DB in session, 
-        // in other words, log them in.
     	session.setAttribute("userId", u.getId());
         return "redirect:/";
     }
@@ -66,18 +50,35 @@ public class HomeController {
             BindingResult result, Model model, HttpSession session) {
         
         // Add once service is implemented:
-        // User user = userServ.login(newLogin, result);
+         User user = userServ.login(newLogin, result);
     
         if(result.hasErrors()) {
             model.addAttribute("newUser", new User());
-            return "index.jsp";
+            return "loginAndReg.jsp";
         }
     
-        // No errors! 
-        // TO-DO Later: Store their ID from the DB in session, 
-        // in other words, log them in.
+        session.setAttribute("userId", user.getId());
+
+        return "redirect:/dashboard";
+    }
     
-        return "redirect:/home";
+    @GetMapping("/dashboard")
+    public String welcome(Model model, HttpSession session) {
+    	Long userId = (Long) session.getAttribute("userId");
+    	if(userId == null) {
+    		return "redirect:/";
+    	}
+    	
+    	model.addAttribute("user", userServ.findById(userId));
+    	
+    	return "dashboard.jsp";
+    }
+    
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+    	session.setAttribute("userId", null);
+    	System.out.println(session.getAttribute("userId"));
+    	return "redirect:/";
     }
     
 }

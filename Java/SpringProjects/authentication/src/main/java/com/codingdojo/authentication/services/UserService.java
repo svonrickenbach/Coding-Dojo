@@ -52,17 +52,38 @@ public class UserService {
     
 
     public User login(LoginUser newLoginObject, BindingResult result) {
-        // TO-DO: Additional validations!
-    	// TO-DO - Reject values:
+    	
+    	// Reject values:
+        if(result.hasErrors()) {
+        	return null; 
+        }
         
     	// Find user in the DB by email
+        Optional<User> loginEmail = userRepo.findByEmail(newLoginObject.getEmail());
+       
         // Reject if NOT present
+        if(!loginEmail.isPresent()) {
+        	result.rejectValue("email", "email", "This email is not registered.");
+        	return null; 
+        }
         
         // Reject if BCrypt password match fails
+        User user = userRepo.findUserByEmail(newLoginObject.getEmail());
+        
+        
+      if(!BCrypt.checkpw(newLoginObject.getPassword(), user.getPassword())) {
+  	    result.rejectValue("password", "Matches", "Invalid Password!");
+  		}
+      
+        return user;
+    }
     
-        // Return null if result has errors
-        // Otherwise, return the user object
-        return null;
+    public User findById(Long id) {
+    	Optional<User> potentialUser = userRepo.findById(id);
+    	if(potentialUser.isPresent()) {
+    		return potentialUser.get();
+    	}
+    	return null;
     }
 }
 
