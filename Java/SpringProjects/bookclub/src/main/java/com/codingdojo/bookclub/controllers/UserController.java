@@ -1,4 +1,4 @@
-package com.codingdojo.authentication.controllers;
+package com.codingdojo.bookclub.controllers;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -11,16 +11,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.codingdojo.authentication.models.LoginUser;
-import com.codingdojo.authentication.models.User;
-import com.codingdojo.authentication.services.UserService;
+import com.codingdojo.bookclub.models.LoginUser;
+import com.codingdojo.bookclub.models.User;
+import com.codingdojo.bookclub.services.UserService;
 
 @Controller
-public class HomeController {
+public class UserController {
     
      @Autowired
      private UserService userServ;
-
     
     @GetMapping("/")
     public String index(Model model) {
@@ -42,7 +41,7 @@ public class HomeController {
          }
     	
     	session.setAttribute("userId", u.getId());
-        return "redirect:/dashboard";
+        return "redirect:/books";
     }
     
     @PostMapping("/login")
@@ -59,19 +58,7 @@ public class HomeController {
     
         session.setAttribute("userId", user.getId());
 
-        return "redirect:/dashboard";
-    }
-    
-    @GetMapping("/dashboard")
-    public String welcome(Model model, HttpSession session) {
-    	Long userId = (Long) session.getAttribute("userId");
-    	if(userId == null) {
-    		return "redirect:/";
-    	}
-    	
-    	model.addAttribute("user", userServ.findById(userId));
-    	
-    	return "dashboard.jsp";
+        return "redirect:/books";
     }
     
     @GetMapping("/logout")

@@ -1,10 +1,13 @@
-package com.codingdojo.authentication.models;
+package com.codingdojo.bookclub.models;
 
+import java.util.List;
 
-import javax.persistence.Entity; 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -35,6 +38,9 @@ public class User {
     @Transient
     @NotEmpty(message="Confirm Password is required!")
     private String confirm;
+    
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Book> books;
   
     public User() {}
 
