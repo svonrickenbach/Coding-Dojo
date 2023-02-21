@@ -60,9 +60,11 @@ public class BookController {
 	}
 	
 	@GetMapping("/books/{bookId}")
-	public String display(Model model, @PathVariable("bookId") Long id) {
+	public String display(Model model, @PathVariable("bookId") Long id,
+			HttpSession session) {
 		
 		model.addAttribute("book", bookService.findBook(id));
+		model.addAttribute("userId", session.getAttribute("userId"));
 		
 		return "displayBook.jsp";
 	}

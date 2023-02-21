@@ -23,12 +23,15 @@
 	<div class="main">
 		<p><c:out value="${book.thoughts}"/></p>
 	</div>
-	<button><a href="/books/<c:out value="${book.id}"></c:out>/edit">Edit</a></button>
-	<!--Add conditional logic so that only person who posted the book can delete if they are logged in  -->
-	<form action="/books/${book.id}" method="post">
-   						<input type="hidden" name="_method" value="delete">
-    					<button>Delete</button>
-					</form>
+	<c:if test="${userId == book.user.id}">
+		<button><a href="/books/<c:out value="${book.id}"></c:out>/edit">Edit</a></button>
+	</c:if>
+	<c:if test="${userId == book.user.id}">
+		<form action="/books/${book.id}" method="post">
+	   						<input type="hidden" name="_method" value="delete">
+	    					<button>Delete</button>
+						</form>
+	</c:if>
 
 </body>
 </html>
