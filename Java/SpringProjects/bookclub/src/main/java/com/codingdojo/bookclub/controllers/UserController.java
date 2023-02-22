@@ -48,8 +48,7 @@ public class UserController {
     public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
             BindingResult result, Model model, HttpSession session) {
         
-        // Add once service is implemented:
-         User user = userServ.login(newLogin, result);
+        User user = userServ.login(newLogin, result);
     
         if(result.hasErrors()) {
             model.addAttribute("newUser", new User());
