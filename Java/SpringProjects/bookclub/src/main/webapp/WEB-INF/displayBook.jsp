@@ -7,7 +7,6 @@
 <head>
 <meta charset="UTF-8">
 <title>View Book</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/app.js"></script>
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
@@ -17,8 +16,14 @@
 		<a href="/books">back to the shelves</a>
 	</div>
 	<div class="subheader">
-		<h2><c:out value="${book.user.userName}"/> read <c:out value="${book.title}"/> by <c:out value="${book.authorName}"/>.</h2>
-		<h2>Here are <c:out value="${book.user.userName}"/>'s thoughts:</h2>
+		<c:if test="${userId == book.user.id}">
+			<h2>You read <c:out value="${book.title}"/> by <c:out value="${book.authorName}"/>.</h2>
+			<h2>Here are your thoughts:</h2>
+		</c:if>
+		<c:if test="${userId != book.user.id}">
+			<h2><c:out value="${book.user.userName}"/> read <c:out value="${book.title}"/> by <c:out value="${book.authorName}"/>.</h2>
+			<h2>Here are <c:out value="${book.user.userName}"/>'s thoughts:</h2>
+		</c:if>
 	</div>
 	<div class="main">
 		<p><c:out value="${book.thoughts}"/></p>
@@ -28,9 +33,9 @@
 	</c:if>
 	<c:if test="${userId == book.user.id}">
 		<form action="/books/${book.id}" method="post">
-	   						<input type="hidden" name="_method" value="delete">
-	    					<button>Delete</button>
-						</form>
+	   		<input type="hidden" name="_method" value="delete">
+	    	<button>Delete</button>
+		</form>
 	</c:if>
 
 </body>
