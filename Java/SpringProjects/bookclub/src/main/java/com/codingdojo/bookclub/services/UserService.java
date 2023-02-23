@@ -31,6 +31,13 @@ public class UserService {
     			result.rejectValue("email", "email", "Email already exists. Please login!");
     			return null;
     		}
+    		
+    		Optional<User> userName = userRepo.findUserByUserName(newUser.getUserName());
+    		
+    		if(userName.isPresent()) {
+    			result.rejectValue("userName", "userName", "Username already exists, please choose a different username or log into an existing account.");
+    			return null;
+    		}
   
     		if(!newUser.getPassword().equals(newUser.getConfirm())) {
     			result.rejectValue("confirm", "passwords do not match", "Passwords must match!");
@@ -57,7 +64,7 @@ public class UserService {
         	return null; 
         }
         
-        User user = userRepo.findUserByEmail(newLoginObject.getEmail());
+        User user = loginEmail.get();
         
         
         if(!BCrypt.checkpw(newLoginObject.getPassword(), user.getPassword())) {

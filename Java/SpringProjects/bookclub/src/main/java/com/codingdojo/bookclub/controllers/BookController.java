@@ -42,6 +42,10 @@ public class BookController {
     
 	@GetMapping("/books/new")
 	public String bookForm(Model model, HttpSession session) {
+		Long userId = (Long) session.getAttribute("userId");
+    	if(userId == null) {
+    		return "redirect:/";
+    	}
 		model.addAttribute("book", new Book());
 		model.addAttribute("userId", session.getAttribute("userId"));
 		return "create.jsp";
@@ -49,7 +53,12 @@ public class BookController {
 	
 	@PostMapping("/books/new/add")
 	public String addBook(@Valid @ModelAttribute("book") Book newBook,
-			BindingResult result) {
+			BindingResult result, HttpSession session) {
+		
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/";
+		}
+		
 		if(result.hasErrors()) {
 			return "create.jsp";
 		}
@@ -62,6 +71,10 @@ public class BookController {
 	@GetMapping("/books/{bookId}")
 	public String display(Model model, @PathVariable("bookId") Long id,
 			HttpSession session) {
+		Long userId = (Long) session.getAttribute("userId");
+    	if(userId == null) {
+    		return "redirect:/";
+    	}
 		
 		model.addAttribute("book", bookService.findBook(id));
 		model.addAttribute("userId", session.getAttribute("userId"));
@@ -70,7 +83,18 @@ public class BookController {
 	}
 	
 	@GetMapping("/books/{bookId}/edit")
-	public String edit(Model model, @PathVariable("bookId") Long id) {
+	public String edit(Model model, @PathVariable("bookId") Long id,
+			HttpSession session) {
+		
+		Long bookUserId = bookService.findBook(id).getUser().getId();
+		
+		System.out.println("this is the book id: " + id);
+		System.out.println("this is the user id: " + session.getAttribute("userId"));
+		System.out.println("this is the books user Id: " + bookUserId);
+		
+		if(!bookUserId.equals(session.getAttribute("userId"))) {
+			return "redirect:/books";
+		}
 		
 		model.addAttribute("book", bookService.findBook(id));
 		
@@ -87,7 +111,7 @@ public class BookController {
 		return "redirect:/books";
 	}
 	
-	@DeleteMapping("/books/{id}/delete")
+	@DeleteMapping("/books/{id}")
 	public String destroy(@PathVariable("id") Long id) {
 		bookService.deleteBook(id);
 		return "redirect:/books";

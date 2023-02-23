@@ -30,9 +30,18 @@
     		<form:textarea path="thoughts" class="form-control" cols="30" rows="10"></form:textarea>
   		</div>
   		<form:input type="hidden" path="user" value="${userId}"/>
+  		<form:errors path="user"/>
   		<button type="submit" class="btn btn-default">Submit</button>
 	</form:form>
 	
 	<a href="/books">All Books</a>
 </body>
 </html>
+
+<div>container</div>
+	<div>row</div>
+		<div>col-6</div>
+			<div>mb-3</div>
+				<label for=""></label>
+				
+				<input type="submit" value = login class="btn btn-primary"/>
