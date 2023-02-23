@@ -42,6 +42,10 @@ public class Book {
     @JoinColumn(name="user_id")
     private User user;
     
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="borrower_id")
+    private User borrower;
+    
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
@@ -83,7 +87,13 @@ public class Book {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-
+	
+	public User getBorrower() {
+		return borrower;
+	}
+	public void setBorrower(User borrower) {
+		this.borrower = borrower;
+	}
 	@PrePersist
     protected void onCreate(){
         this.createdAt = new Date();

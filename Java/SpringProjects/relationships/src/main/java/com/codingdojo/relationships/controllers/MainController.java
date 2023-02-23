@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.relationships.models.License;
 import com.codingdojo.relationships.models.Person;
@@ -54,12 +53,12 @@ public class MainController {
     
     @PostMapping("/license/create")
     public String create(@Valid @ModelAttribute("license") License license, BindingResult result, 
-                         @RequestParam(value="expirationDate") String expirationDate, Model model) {
+                          Model model) {
         if (result.hasErrors()) {
         	model.addAttribute("persons", personService.allPersons());
             return "createLicense.jsp";
         } else {
-            license.setExpirationDateAsString(expirationDate);
+//            license.setExpirationDateAsString(expirationDate);
             licenseService.createLicense(license);
             return "redirect:/";
         }

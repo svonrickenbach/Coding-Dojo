@@ -31,8 +31,10 @@
     		<form:textarea path="thoughts" class="form-control" cols="30" rows="10"></form:textarea>
   		</div>
   		<form:input type="hidden" path="user" value="${userId}"/>
+  		<form:input type="hidden" path="borrower" value="${book.borrower.id}"/>
   		<button type="submit" class="btn btn-default">Submit</button>
 	</form:form>
+	<a href="/books/<c:out value="${book.id}"></c:out>/delete">Delete</a>
 	
 	<a href="/books">All Books</a>
 </body>

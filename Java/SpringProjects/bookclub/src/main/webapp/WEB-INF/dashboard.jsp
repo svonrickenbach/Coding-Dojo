@@ -21,6 +21,7 @@
 		<div class="right">
 			<a href="/logout">logout</a>
 			<a href="/books/new">+ Add a book to my shelf!</a>
+			<a href="/bookmarket">Visit the Book Market</a>
 		</div>
 	</div>
 	<div class="main">

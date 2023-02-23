@@ -1,7 +1,5 @@
 package com.codingdojo.relationships.models;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,7 +25,7 @@ public class License {
 	@Size(min = 2, max = 2)
 	private String state;
 	
-	@NotBlank(message = "You must enter a date!")
+	@NotNull(message = "You must enter a date!")	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date expirationDate;
 	
@@ -35,7 +33,7 @@ public class License {
 	@JoinColumn(name="person_id")
 	private Person person;
 	
-	private String expirationDateAsString;
+//	private String expirationDateAsString;
 	
 	public License() {
 		
@@ -79,20 +77,20 @@ public class License {
 		this.person = person;
 	}
 
-	public String getExpirationDateAsString() {
-		return expirationDateAsString;
-	}
-
-	public void setExpirationDateAsString(String expirationDateAsString) {
-		this.expirationDateAsString = expirationDateAsString;
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		try {
-			this.expirationDate = sdf.parse(expirationDateAsString);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-	}
+//	public String getExpirationDateAsString() {
+//		return expirationDateAsString;
+//	}
+//
+//	public void setExpirationDateAsString(String expirationDateAsString) {
+//		this.expirationDateAsString = expirationDateAsString;
+//		
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		try {
+//			this.expirationDate = sdf.parse(expirationDateAsString);
+//		} catch (ParseException e) {
+//			e.printStackTrace();
+//		}
+//	}
 	
 //	static {
 //		java.beans.PropertyEditorManager.registerEditor(Date.class, DateEditor.class);

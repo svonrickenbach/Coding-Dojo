@@ -13,7 +13,7 @@
 </head>
 <body>
 <h1>New Book</h1>
-	<form:form action="/books/new/add" method="post" modelAttribute="book">
+	<form:form action="/books" method="post" modelAttribute="book">
   		<div class="form-group">
     		<form:label path="Title">Title</form:label>
     		<form:errors path="title"/>
@@ -37,11 +37,3 @@
 	<a href="/books">All Books</a>
 </body>
 </html>
-
-<div>container</div>
-	<div>row</div>
-		<div>col-6</div>
-			<div>mb-3</div>
-				<label for=""></label>
-				
-				<input type="submit" value = login class="btn btn-primary"/>
