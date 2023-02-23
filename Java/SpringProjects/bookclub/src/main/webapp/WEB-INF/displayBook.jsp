@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="/js/app.js"></script>
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" />
 </head>
-<body>
+<body class="p-4">
 	<div class="header">
 		<h1><c:out value="${book.title}"/></h1>
 		<a href="/books">back to the shelves</a>

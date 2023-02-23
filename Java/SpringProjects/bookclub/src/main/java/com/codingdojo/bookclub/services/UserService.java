@@ -60,8 +60,8 @@ public class UserService {
         User user = userRepo.findUserByEmail(newLoginObject.getEmail());
         
         
-      if(!BCrypt.checkpw(newLoginObject.getPassword(), user.getPassword())) {
-  	    result.rejectValue("password", "Matches", "Invalid Password!");
+        if(!BCrypt.checkpw(newLoginObject.getPassword(), user.getPassword())) {
+        	result.rejectValue("password", "Matches", "Invalid Password!");
   		}
       
         return user;
