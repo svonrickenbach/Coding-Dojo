@@ -13,39 +13,41 @@
 </head>
 <body>
 	<h1 class = "text-center mt-4 mb-5">Home Page</h1>
-	<div class = "ms-4 border-bottom border-dark">
+	<div class = "m-4 border-bottom border-dark">
 		<a href="/product" class="d-block">New Product</a>
 		<a href="/category" class="d-block mt-2 mb-4">New Category</a>
 	</div>
-	<table class="table table-bordered border-dark m-4">
-  		<thead>
-    		<tr>
-      			<th class="text-center fs-3">Products</th>
-      			<th class="text-center fs-3">Categories</th>
+	<div class="m-4">
+		<table class="table table-bordered border-dark">
+  			<thead>
+    			<tr>
+      				<th class="text-center fs-3">Products</th>
+      				<th class="text-center fs-3">Categories</th>
     		</tr>
-  		</thead>
-  		<tbody>
-    		<tr>
-      			<td scope="row" class="text-center">
-      				<ul>
-      					<c:forEach var = "product" items ="${products}">
-							<li>
-								<a href="product/<c:out value="${product.id}"/>"><c:out value="${product.name}"/></a>
-							</li>    			
-      					</c:forEach>
-      				</ul>
-      			</td>
-      			<td class="text-center">
-      				<ul>
-      					<c:forEach var = "category" items ="${categories}">
-      						<li>
-								<a href="category/<c:out value="${category.id}"/>"><c:out value="${category.name}"/></a>   
-							</li> 			
-      					</c:forEach>
-      				</ul>
-      			</td>
-   	 		</tr>
-  		</tbody>
-</table>
+  			</thead>
+  			<tbody>
+    			<tr>
+      				<td scope="row" class="text-center">
+      					<ul>
+      						<c:forEach var = "product" items ="${products}">
+								<li>
+									<a href="product/<c:out value="${product.id}"/>"><c:out value="${product.name}"/></a>
+								</li>    			
+      						</c:forEach>
+      					</ul>
+      				</td>
+      				<td class="text-center">
+      					<ul>
+      						<c:forEach var = "category" items ="${categories}">
+      							<li>
+									<a href="category/<c:out value="${category.id}"/>"><c:out value="${category.name}"/></a>   
+								</li> 			
+      						</c:forEach>
+      					</ul>
+      				</td>
+   	 			</tr>
+  			</tbody>
+		</table>
+	</div>
 </body>
 </html>

@@ -13,7 +13,7 @@
 </head>
 <body>
 	<h1 class = "text-center mt-4 mb-5">Home Page</h1>
-	<div class = "ms-4 border-bottom border-dark">
+	<div class = "m-4 border-bottom border-dark">
 		<a href="/" class="d-block mt-2 mb-4">Home</a>
 	</div>
         <form:form action="/category" method="post" modelAttribute="category" class = "m-4">

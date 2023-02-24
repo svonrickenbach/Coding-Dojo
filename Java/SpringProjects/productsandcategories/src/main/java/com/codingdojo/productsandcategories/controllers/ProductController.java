@@ -42,7 +42,7 @@ public class ProductController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("product/{id}")
+	@GetMapping("/product/{id}")
 	public String sProduct(Model model, @PathVariable("id") Long id) {
 		
 		Product currentProduct = productService.findById(id);
@@ -54,16 +54,16 @@ public class ProductController {
 		return "showProduct.jsp";
 	}
 	
-	@PostMapping("product/{id}")
+	@PostMapping("/product/{id}")
 	public String addCategory(Model model, @PathVariable("id") Long id, 
 			@RequestParam(value="categoryId") Long categoryId) {
-		
+	
 		Product product = productService.findById(id);
 		Category category = categoryService.findById(categoryId);
 		product.getCategories().add(category);
 		productService.updateProduct(product);
 		
-		return "redirect:product/" + id;
+		return "redirect:/product/" + id;
 	}
 }
 
