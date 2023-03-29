@@ -28,11 +28,7 @@ const UserForm = (props) => {
 
     const handleFirstName = (e) => {
         setFirstName(e.target.value);
-        if(e.target.value.length === 0) {
-            setFirstNameError("");
-        } else if(e.target.value.length < 1) {
-            setFirstNameError("First name is required!");
-        } else if(e.target.value.length < 2) {
+        if(e.target.value.length < 2 && e.target.value.length > 0) {
             setFirstNameError("First name must be 2 characters or longer!");
         } else {
             // an empty string is considered a "falsy" value
@@ -139,7 +135,7 @@ const UserForm = (props) => {
                         confirmPasswordError ?
                         <p>{confirmPasswordError}</p> :
                         ''
-                    }
+                    } 
                 </div>
                 <div>
                     {
