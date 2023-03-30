@@ -3,30 +3,36 @@ import React, {useState} from 'react';
 const TaskForm = (props) => {
     // console.log(props);
     const {taskList, setTaskList} = props
-    const [task, setTask] = useState("s");
+    const [todoItem, setTodoItem] = useState({
+        task: '',
+        taskComplete: false
+});
 
     const createTask = (e) => {
         e.preventDefault();
 
-        const newTask = {task};
 
-        setTaskList([...taskList, task])
+        setTaskList([...taskList, todoItem])
         
-        setTask("");
+        setTodoItem({
+            task: '',
+            taskComplete: false
+        });
 
     }
 
     const handleTask = (e) => {
         console.log(e);
-        setTask(e.target.value);
+        setTodoItem({...todoItem, [e.target.name]:e.target.value});
     }
 
     return(
         <div>
             <form onSubmit={createTask}>
                 <div>
-                    <label> Task: </label>
-                    <input type="text" value={task} onChange= { handleTask } />
+                    <label> To Do: </label>
+                    <input type="text" name="task" value={todoItem.task} onChange= { handleTask } />
+                    <input type="hidden" name='taskComplete' value={todoItem.taskComplete} onChange= { handleTask }/>
                 </div>
                 <div>
                         <input type="submit" value="Add Task" />
