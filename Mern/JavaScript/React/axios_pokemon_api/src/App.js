@@ -26,7 +26,7 @@ function App() {
       {
         pokemon.map((character, idx) => (
             <h2>
-              {idx}. {character.name}
+              {idx}. { character.name}
             </h2>
         ))
         }
