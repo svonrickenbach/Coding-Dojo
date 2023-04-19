@@ -44,7 +44,7 @@ const ProductForm = (props) => {
             </p>
             <p>
                 <label>Price</label><br />
-                <input type="text" onChange={(e) => setPrice(e.target.value)} value={price.price} />
+                <input type="number" onChange={(e) => setPrice(e.target.value)} value={price.price} />
             </p>
             <p>
                 <label>Description</label><br />
