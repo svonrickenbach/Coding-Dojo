@@ -33,3 +33,6 @@ Set up Server File
 
 Once back end and front end folder strucutres are set up, (npm run start) in client folder then (npm intsall cors) in server folder before starting server (nodemon server.js) 
 
+
+*** At some point you'll have to install react-router-dom (npm install react-router-dom)
+
