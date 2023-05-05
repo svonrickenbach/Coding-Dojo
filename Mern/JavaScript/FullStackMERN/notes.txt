@@ -1,0 +1,38 @@
+Server Setup:
+
+Create a new project folder (mkdir project name)
+Create Server folder    (mkdir server)
+Navigate to server folder and create server.js file (touch server.js)
+Create a package.json (refered to as "new project" on platform?) (npm init -y)
+Install express (npm install express)
+Install mongoose(npm install mongoose)
+Add the following code to the server.js file:
+
+    const express = require('express');
+    const cors = require('cors')
+    const app = express();
+    const port = 8000;
+
+    app.use(cors())
+
+    require('./routes/person.routes')(app); 
+
+    app.listen(port, () => console.log(`Listening on port: ${port}`) );
+
+
+Create congif (mkdir config), controllers (mkdir controllers), models (mkdir models), and routes (mkdir routes) folders
+
+Cient (React) Side Setup: 
+
+Go to project root folder from step one and use (npx create-react-app client)
+Create components folder in src folder 
+
+Set up routes file
+Set up Server File 
+
+
+Once back end and front end folder strucutres are set up, (npm run start) in client folder then (npm intsall cors) in server folder before starting server (nodemon server.js) 
+
+
+*** At some point you'll have to install react-router-dom (npm install react-router-dom)
+
