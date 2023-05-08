@@ -36,3 +36,21 @@ Once back end and front end folder strucutres are set up, (npm run start) in cli
 
 *** At some point you'll have to install react-router-dom (npm install react-router-dom)
 
+Red: All features required in under 5 hours
+CRUD: Display all of the pets currently available to be adopted.
+CRUD: Users can add pets to be put up for adoption (user can create pets)
+CRUD: A pet details page exists that displays information about that pet 
+CRUD: Users can update the information about a pet 
+CRUD: Users can adopt a pet which will remove it from the database 
+Validations: pet name, pet type, and pet description are all required and must be 3 characters or longer 
+Validations: Pets may have between 0 and 3 skills 
+Validations: Display back end error messages 
+Backend Validations: Error messages are user created and not the mongoose default 
+HTML & CSS: Must reflect the wireframe to at least 75% accuracy
+Black: 2 features in 5 hours + Deployment in 24 hours from submission
+Deployed on Amazon EC2.
+Socket.io - when a pet is adopted, remove it from the table for all users viewing the dashboard
+Sort the pets in the shelter by type
+Include a button to like a pet, disable it when clicked until the component reloads
+Apply validations when updating
+Ensure that pet name is unique when adding it to the database (using unique alone is not enough you need to be able to show error messages on the frontend, Research)
