@@ -3,7 +3,7 @@ import axios from 'axios';
 const ProductForm = (props) => {
     const { products, setProducts } = props;
     const [title, setTitle] = useState("");
-    const [price, setPrice] = useState("");
+    const [price, setPrice] = useState(0);
     const [description, setDescription] = useState("");
 
 
@@ -23,15 +23,9 @@ const ProductForm = (props) => {
             })
             .catch(err => console.log(err))
 
-            setTitle({
-                title: '',
-            });
-            setPrice({
-                price: 0,
-            });
-            setDescription({
-                description: '',
-            });
+            setTitle('');
+            setPrice(0);
+            setDescription('');
     }
 
 

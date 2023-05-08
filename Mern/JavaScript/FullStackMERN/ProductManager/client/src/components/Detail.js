@@ -6,14 +6,12 @@ const Detail = (props) => {
     const {id} = useParams(); 
     const navigate = useNavigate();
 
-    const removeFromDom = productId => {
-        setProduct(product.filter(product => product._id != productId))
-    }
+
 
     const deleteProduct = (productId) => {
         axios.delete('http://localhost:8000/api/products/' + productId)
             .then(res => {
-                removeFromDom(productId);
+                console.log(res);
                 navigate("/home");
             })
             .catch(err => console.log(err))
